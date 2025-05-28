@@ -13,10 +13,22 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ctrl"):
 		SPEED = 2
-		scale = Vector3(1,0.6,1)
+		$CollisionShape3D.scale = Vector3(1,0.6,1)
 	else:
 		SPEED = 9
-		scale = Vector3(1,1,1)
+		$CollisionShape3D.scale = Vector3(1,1,1)
+	if Input.is_action_pressed("s") or Input.is_action_pressed("a") or Input.is_action_pressed("w") or Input.is_action_pressed("d"):
+		if SPEED == 9 and not $AudioStreamPlayer3D.playing:
+			$AudioStreamPlayer3D.play()
+		if SPEED == 2 and not $AudioStreamPlayer3D2.playing:
+			$AudioStreamPlayer3D2.play()
+	else:
+		$AudioStreamPlayer3D.stop()
+		$AudioStreamPlayer3D2.stop()
+	if not is_on_floor():
+		$AudioStreamPlayer3D.stop()
+		$AudioStreamPlayer3D2.stop()
+
 	if not is_on_floor():
 		velocity += get_gravity() * 1.4 * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
