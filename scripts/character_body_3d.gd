@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var SPEED = 8.0
+var SPEED = 9.0
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		SPEED = 2
 		scale = Vector3(1,0.6,1)
 	else:
-		SPEED = 8
+		SPEED = 9
 		scale = Vector3(1,1,1)
 	if not is_on_floor():
 		velocity += get_gravity() * 1.4 * delta
