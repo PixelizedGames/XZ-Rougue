@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt7kk78mdocxd"]
+[gd_scene load_steps=7 format=3 uid="uid://dt7kk78mdocxd"]
 
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="1_du0rs"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="2_1qem2"]
+[ext_resource type="PackedScene" uid="uid://cahfb2ebnegxy" path="res://objects/moveable_box.tscn" id="3_vfb3w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1qem2"]
 sky_top_color = Color(0.345475, 0.292224, 0.293744, 1)
@@ -33,3 +34,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94588, 0)
 
 [node name="box" parent="." instance=ExtResource("2_1qem2")]
 transform = Transform3D(18.9533, 0, 0, 0, 1, 0, 0, 0, 19.6548, 0, 0, 0)
+
+[node name="moveable box" parent="." instance=ExtResource("3_vfb3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45271, 1.54124, 0)
