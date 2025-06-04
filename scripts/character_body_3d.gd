@@ -5,17 +5,20 @@ const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
 @onready var MOUSE_SENSITIVITY = 0.1
+@onready var bullet_scene = preload("res://objects/p_bullet.tscn")
 var vertical_look_angle = 0.0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("shoot"):
+		_spawn_bullet()
 	if Input.is_action_pressed("ctrl"):
 		SPEED = 2
 		$CollisionShape3D.scale = Vector3(1,0.6,1)
 	else:
-		SPEED = 9
+		SPEED = 9 
 		$CollisionShape3D.scale = Vector3(1,1,1)
 	if Input.is_action_pressed("s") or Input.is_action_pressed("a") or Input.is_action_pressed("w") or Input.is_action_pressed("d"):
 		if SPEED == 9 and not $AudioStreamPlayer3D.playing:
@@ -48,8 +51,15 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENSITIVITY))
 		vertical_look_angle = clamp(vertical_look_angle - event.relative.y * MOUSE_SENSITIVITY, MIN_LOOK_ANGLE, MAX_LOOK_ANGLE)
 		$Camera3D.rotation_degrees.x = vertical_look_angle
+		$pistol.rotation_degrees.x = -vertical_look_angle
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Show mouse when exiting
 		get_tree().quit()
+
+func _spawn_bullet():
+	var bullet_instance = bullet_scene.instantiate()
+	get_tree().current_scene.add_child(bullet_instance)
+	bullet_instance.global_transform = $pistol/MeshInstance3D7.global_transform
+	bullet_instance.rotation_degrees = $pistol.rotation_degrees
