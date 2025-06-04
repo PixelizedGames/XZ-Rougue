@@ -72,9 +72,14 @@ transform = Transform3D(-16.7775, 0, -1.10745e-05, 0, 10.9188, 0, 1.46673e-06, 0
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 spot_range = 100.0
-spot_angle = 0.5
+spot_angle = 0.2
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="pistol"]
 transform = Transform3D(0.281221, 5.65335e-08, 0, -2.76351e-08, 0.243663, 8.88773e-17, 6.66134e-16, 5.95321e-18, -0.15066, 0.0161633, -0.573147, 0.404657)
 mesh = SubResource("BoxMesh_72r58")
 skeleton = NodePath("../..")
+
+[node name="PSTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]

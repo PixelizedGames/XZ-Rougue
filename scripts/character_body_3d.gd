@@ -1,12 +1,14 @@
 extends CharacterBody3D
-
+var vertical_look_angle = 0.0
 var SPEED = 9.0
+var PSReady = true
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
 @onready var MOUSE_SENSITIVITY = 0.1
 @onready var bullet_scene = preload("res://objects/p_bullet.tscn")
-var vertical_look_angle = 0.0
+@onready var PSTimer = $PSTimer
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -59,6 +61,13 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 
 func _spawn_bullet():
-	var instance = bullet_scene.instantiate()
-	instance.global_transform = $pistol/MeshInstance3D7.global_transform
-	get_parent().add_child(instance)
+	if PSReady == true:
+		PSReady = false
+		PSTimer.start()
+		var instance = bullet_scene.instantiate()
+		instance.global_transform = $pistol/MeshInstance3D7.global_transform
+		get_parent().add_child(instance)
+
+
+func _on_ps_timer_timeout():
+	PSReady = true

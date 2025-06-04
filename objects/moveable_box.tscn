@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cahfb2ebnegxy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4e6a7"]
-friction = 20.0
-bounce = 0.1
+friction = 200.0
+bounce = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e6a7"]
 albedo_color = Color(1, 0.419608, 1, 1)
@@ -14,7 +14,7 @@ material = SubResource("StandardMaterial3D_4e6a7")
 
 [node name="moveable box" type="RigidBody3D"]
 collision_layer = 2
-mass = 50.0
+mass = 500.0
 physics_material_override = SubResource("PhysicsMaterial_4e6a7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

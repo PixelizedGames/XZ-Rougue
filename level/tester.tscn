@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dt7kk78mdocxd"]
 
+[ext_resource type="Script" uid="uid://hsx2yw6ff17e" path="res://level/tester.gd" id="1_28obw"]
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="1_du0rs"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="2_1qem2"]
-[ext_resource type="PackedScene" uid="uid://cahfb2ebnegxy" path="res://objects/moveable_box.tscn" id="3_vfb3w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1qem2"]
 sky_top_color = Color(0.345475, 0.292224, 0.293744, 1)
@@ -18,8 +18,13 @@ background_mode = 2
 sky = SubResource("Sky_vfb3w")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0479696, 0.245478, 0.0818514, 1)
+fog_light_energy = 0.2
+fog_height = 1.0
 
 [node name="Tester" type="Node3D"]
+script = ExtResource("1_28obw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l4f2d")
@@ -33,7 +38,12 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94588, 0)
 
 [node name="box" parent="." instance=ExtResource("2_1qem2")]
-transform = Transform3D(18.9533, 0, 0, 0, 1, 0, 0, 0, 19.6548, 0, 0, 0)
+transform = Transform3D(77.4581, 0, 0, 0, 1, 0, 0, 0, 19.6548, 34.2736, 0, 0)
 
-[node name="moveable box" parent="." instance=ExtResource("3_vfb3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45271, 1.54124, 0)
+[node name="box2" parent="." instance=ExtResource("2_1qem2")]
+transform = Transform3D(0.672159, 0, 0, 0, 12.416, 0, 0, 0, 19.6548, 72.4744, 5.67939, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
