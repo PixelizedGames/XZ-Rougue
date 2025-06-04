@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 
 func _spawn_bullet():
-	var bullet_instance = bullet_scene.instantiate()
-	get_tree().current_scene.add_child(bullet_instance)
-	bullet_instance.global_transform = $pistol/MeshInstance3D7.global_transform
-	bullet_instance.rotation_degrees = $pistol.rotation_degrees
+	var instance = bullet_scene.instantiate()
+	instance.global_transform = $pistol/MeshInstance3D7.global_transform
+	get_parent().add_child(instance)

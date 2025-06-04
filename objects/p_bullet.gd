@@ -1,11 +1,22 @@
-extends Node3D
+extends CharacterBody3D
+class_name Bullet
+@onready var timer = $Timer
+var SPEED =30
 
-@export var speed: float = 1
-var direction: Vector3
 
-func _ready() -> void:
-	# Save the initial forward direction (-Z in local space)
-	direction = -global_transform.basis.z
 
 func _physics_process(delta: float) -> void:
-	global_position += direction * speed * delta
+	velocity += get_gravity() * delta
+	position+=transform.basis * Vector3(0,-SPEED,0)
+	move_and_slide()
+
+
+func _on_bullet_hibox_body_entered(body: Node3D) -> void:
+	timer.start()
+
+
+
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
