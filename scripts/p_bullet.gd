@@ -1,15 +1,16 @@
 extends CharacterBody3D
 @onready var timer = $Timer
-var SPEED = 10
+@onready var timer2 = $Timer2
+var SPEED = 7
 
-
-
+func _process(delta: float) -> void:
+	pass
 func _physics_process(delta: float) -> void:
-	position+=transform.basis * Vector3(0,-SPEED,0)
-	move_and_slide()
+	pass
 
 func _ready():
 	timer.start()
+	timer2.start()
 
 
 
@@ -17,3 +18,9 @@ func _ready():
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_timer_2_timeout() -> void:
+	timer2.start()
+	position+=transform.basis * Vector3(0,-SPEED,0)
+	move_and_slide()

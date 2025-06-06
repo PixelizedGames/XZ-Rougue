@@ -29,3 +29,7 @@ func _on_timer_timeout():
 	timer.start()
 	spawn_obj_b()
 	spawn_obj_s()
+
+
+func _on_timer_2_timeout() -> void:
+	pass # Replace with function body.
