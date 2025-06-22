@@ -4,8 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="2_pgmnd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfge4"]
+albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
-emission = Color(1, 1, 0, 1)
+emission = Color(1, 0, 0, 1)
 rim_enabled = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oosud"]

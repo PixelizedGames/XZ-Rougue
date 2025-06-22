@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt7kk78mdocxd"]
+[gd_scene load_steps=8 format=3 uid="uid://dt7kk78mdocxd"]
 
 [ext_resource type="Script" uid="uid://hsx2yw6ff17e" path="res://scripts/tester.gd" id="1_28obw"]
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="1_du0rs"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="2_1qem2"]
+[ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="4_l4f2d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1qem2"]
 sky_top_color = Color(0.345475, 0.292224, 0.293744, 1)
@@ -21,7 +22,10 @@ glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.0479696, 0.245478, 0.0818514, 1)
 fog_light_energy = 0.2
+fog_density = 0.1
 fog_height = 1.0
+fog_height_density = 1.0
+volumetric_fog_enabled = true
 
 [node name="Tester" type="Node3D"]
 script = ExtResource("1_28obw")
@@ -40,10 +44,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94588, 0)
 [node name="box" parent="." instance=ExtResource("2_1qem2")]
 transform = Transform3D(77.4581, 0, 0, 0, 1, 0, 0, 0, 19.6548, 34.2736, 0, 0)
 
-[node name="box2" parent="." instance=ExtResource("2_1qem2")]
-transform = Transform3D(0.672159, 0, 0, 0, 12.416, 0, 0, 0, 19.6548, 72.4744, 5.67939, 0)
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="light" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 9.52696, 8.22417, -7.81639)
+
+[node name="light2" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 18.5705, 8.22417, -7.81639)
+
+[node name="light3" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 9.52696, 8.22417, 7.66602)
+
+[node name="light4" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 18.5705, 8.22417, 7.66602)
+
+[node name="light5" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 31.534, 8.22417, -7.81639)
+
+[node name="light6" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 40.5775, 8.22417, -7.81639)
+
+[node name="light7" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 31.534, 8.22417, 7.66602)
+
+[node name="light8" parent="." instance=ExtResource("4_l4f2d")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 40.5775, 8.22417, 7.66602)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

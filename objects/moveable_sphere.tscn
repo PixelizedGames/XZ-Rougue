@@ -6,7 +6,7 @@ bounce = 0.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_ndmr0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoe1f"]
-albedo_color = Color(1, 0, 1, 1)
+albedo_color = Color(0.654902, 0.556863, 0.619608, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_iuuvc"]
 material = SubResource("StandardMaterial3D_uoe1f")
@@ -14,9 +14,11 @@ material = SubResource("StandardMaterial3D_uoe1f")
 [node name="Moveable_Sphere" type="RigidBody3D"]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_uoe1f")
+gravity_scale = 1.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ndmr0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_iuuvc")
+skeleton = NodePath("../Moveable_Sphere")

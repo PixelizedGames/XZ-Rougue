@@ -70,7 +70,7 @@ skeleton = NodePath("../..")
 [node name="SpotLight3D" type="SpotLight3D" parent="pistol"]
 transform = Transform3D(-16.7775, 0, -1.10745e-05, 0, 10.9188, 0, 1.46673e-06, 0, -2.22206, 4.76837e-07, -0.564882, 0.485091)
 light_color = Color(1, 0, 0, 1)
-light_energy = 16.0
+light_energy = 999.0
 spot_range = 100.0
 spot_angle = 0.2
 
@@ -80,6 +80,6 @@ mesh = SubResource("BoxMesh_72r58")
 skeleton = NodePath("../..")
 
 [node name="PSTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
