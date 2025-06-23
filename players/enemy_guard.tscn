@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca5yvpl8qril5"]
+
+[ext_resource type="Script" uid="uid://cljqpaj7kw56g" path="res://scripts/enemy_guard.gd" id="1_vktuh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vktuh"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dltxv"]
+material = SubResource("StandardMaterial3D_vktuh")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x3j3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dltxv"]
+albedo_color = Color(0, 0.8, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x3j3m"]
+material = SubResource("StandardMaterial3D_dltxv")
+
+[node name="enemy guard" type="CharacterBody3D"]
+script = ExtResource("1_vktuh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_dltxv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_x3j3m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.669322, 0, 0, 0, -6.86192e-05, 0.340811, 0, -0.231231, -0.000101138, 0, 0.365018, -0.361781)
+mesh = SubResource("CapsuleMesh_x3j3m")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfn53jv4bc7ux"]
+
+[ext_resource type="Script" uid="uid://mny7fw6gpgks" path="res://scripts/light_pole.gd" id="1_kig6k"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ao3h7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kig6k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bfpjk"]
+
+[node name="light pole" type="MeshInstance3D"]
+transform = Transform3D(0.5, 0, 0, 0, 4.35963, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ao3h7")
+script = ExtResource("1_kig6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_kig6k")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 0.229377, 0, -2, -7.62261e-07, 0, 0.88969, -2.42512)
+light_energy = 10.0
+spot_range = 11.4525
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.98275, 0, 0, 0, 0.121629, 0, 0, 0, 4.23194, 0, 0.983625, -2.32652)
+mesh = SubResource("SphereMesh_bfpjk")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

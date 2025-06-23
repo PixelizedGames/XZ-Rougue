@@ -3,6 +3,8 @@ var vertical_look_angle = 0.0
 var SPEED = 9
 var PSReady = true
 var SPEEDY = 0
+var hack_g = 1
+var hack_s = 1
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
@@ -15,6 +17,12 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("hack"):
+		hack_g = 0.1
+		hack_s = 3
+	else:
+		hack_g = 1
+		hack_s = 1
 	if Input.is_action_pressed("shoot"):
 		_spawn_bullet()
 	if Input.is_action_pressed("ctrl"):
@@ -36,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		$AudioStreamPlayer3D2.stop()
 
 	if not is_on_floor():
-		velocity += get_gravity() * 1.4 * delta
+		velocity += get_gravity() * hack_g * delta 
 		SPEEDY = 3
 	if is_on_floor():
 		SPEEDY = 0
@@ -45,8 +53,8 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("a", "d", "w", "s")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * (SPEED + SPEEDY)
-		velocity.z = direction.z * (SPEED + SPEEDY)
+		velocity.x = direction.x * (SPEED + (SPEEDY * hack_s))
+		velocity.z = direction.z * (SPEED + (SPEEDY * hack_s))
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
