@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh8xqox45d4mh"]
+[gd_scene load_steps=7 format=3 uid="uid://bh8xqox45d4mh"]
 
 [ext_resource type="Script" uid="uid://duypox2o604n8" path="res://scripts/p_bullet.gd" id="1_oosud"]
 [ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="2_pgmnd"]
@@ -13,6 +13,8 @@ rim_enabled = true
 material = SubResource("StandardMaterial3D_wfge4")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pgmnd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pheql"]
 
 [node name="Pbullet" type="CharacterBody3D"]
 script = ExtResource("1_oosud")
@@ -35,4 +37,15 @@ autoplay = true
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.01
 
+[node name="Bullet_area" type="Area3D" parent="."]
+transform = Transform3D(1.12231, 0, 0, 0, 1.08965, 0, 0, 0, 1.12115, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bullet_area"]
+shape = SubResource("CylinderShape3D_pheql")
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="Bullet_area" to="." method="_on_bullet_area_body_entered"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

@@ -150,16 +150,16 @@ transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 4.35963, 0, 4.37114e-08, 0, -0
 skeleton = NodePath("../..")
 
 [node name="enemy guard" parent="." instance=ExtResource("6_iy08k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.215, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.9344, 0, -176.371)
 
 [node name="enemy guard2" parent="." instance=ExtResource("6_iy08k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.215, 0, 2.87382)
 
 [node name="enemy guard3" parent="." instance=ExtResource("6_iy08k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.626, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.626, 0, 59.8716)
 
 [node name="enemy guard4" parent="." instance=ExtResource("6_iy08k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.626, 0, 2.87382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.647, 0, 2.87382)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca5yvpl8qril5"]
+[gd_scene load_steps=8 format=3 uid="uid://ca5yvpl8qril5"]
 
 [ext_resource type="Script" uid="uid://cljqpaj7kw56g" path="res://scripts/enemy_guard.gd" id="1_vktuh"]
 
@@ -16,8 +16,13 @@ albedo_color = Color(0, 0.8, 1, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x3j3m"]
 material = SubResource("StandardMaterial3D_dltxv")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vktuh"]
+
 [node name="enemy guard" type="CharacterBody3D"]
 script = ExtResource("1_vktuh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_dltxv")
@@ -28,3 +33,13 @@ shape = SubResource("CapsuleShape3D_x3j3m")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.669322, 0, 0, 0, -6.86192e-05, 0.340811, 0, -0.231231, -0.000101138, 0, 0.365018, -0.361781)
 mesh = SubResource("CapsuleMesh_x3j3m")
+
+[node name="Enemy" type="Area3D" parent="."]
+transform = Transform3D(1.22174, 0, 0, 0, 1.1895, 0, 0, 0, 1.21726, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+shape = SubResource("CapsuleShape3D_vktuh")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="body_entered" from="Enemy" to="." method="_on_enemy_body_entered"]

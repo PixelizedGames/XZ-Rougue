@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name player
 var vertical_look_angle = 0.0
 var SPEED = 9
 var PSReady = true
@@ -83,3 +84,8 @@ func _spawn_bullet():
 
 func _on_ps_timer_timeout():
 	PSReady = true
+
+
+func _on_area_3d_body_entered(body):
+	if body is enemy:
+		queue_free()
