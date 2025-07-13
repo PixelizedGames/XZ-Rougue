@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqljr0cnb8ux5"]
+[gd_scene load_steps=11 format=3 uid="uid://cqljr0cnb8ux5"]
 
 [ext_resource type="Script" uid="uid://bvyi0t5o54ccw" path="res://scripts/character_body_3d.gd" id="1_ual4q"]
 [ext_resource type="AudioStream" uid="uid://bgur4m36yyqw6" path="res://audio/walking-sound-effect-272246.mp3" id="2_168h7"]
+[ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="3_72r58"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ht0ol"]
 
@@ -81,6 +82,9 @@ transform = Transform3D(0.281221, 5.65335e-08, 0, -2.76351e-08, 0.243663, 8.8877
 mesh = SubResource("BoxMesh_72r58")
 skeleton = NodePath("../..")
 
+[node name="spawning_pos" type="Node3D" parent="pistol"]
+transform = Transform3D(-1, 1.04907e-06, -3.82137e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, -4.76837e-07, 0.206795, 5.19077)
+
 [node name="PSTimer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -89,6 +93,11 @@ transform = Transform3D(1.22526, 0, 0, 0, 1.12866, 0, 0, 0, 1.23499, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_168h7")
+
+[node name="gun_shot" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_72r58")
+max_db = 6.0
+autoplay = true
 
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

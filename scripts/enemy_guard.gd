@@ -2,10 +2,14 @@ extends CharacterBody3D
 class_name enemy
 var imunity = false
 var health = 10
+var shoot_avalible = true
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @onready var timer = $Timer
+@onready var delay_timer = $shoot_delay
 @onready var player = $"../player"
+@onready var bullet_scene = preload("res://objects/e_bullet.tscn")
+@onready var spawn_pos = $spawn_pos
 
 func _physics_process(delta):
 	if health <=0:
@@ -35,3 +39,16 @@ func _on_enemy_body_entered(body):
 
 func _on_timer_timeout():
 	imunity = false
+
+
+func _on_shot_area_body_entered(body: Node3D) -> void:
+	if body is player and shoot_avalible == true:
+		shoot_avalible = false
+		delay_timer.start()
+		var instance = bullet_scene.instantiate()
+		instance.global_transform = spawn_pos.global_transform
+		get_parent().add_child(instance)
+
+
+func _on_shoot_delay_timeout() -> void:
+	shoot_avalible = true

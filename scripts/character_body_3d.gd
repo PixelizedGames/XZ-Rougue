@@ -78,8 +78,9 @@ func _spawn_bullet():
 		PSReady = false
 		PSTimer.start()
 		var instance = bullet_scene.instantiate()
-		instance.global_transform = $pistol/MeshInstance3D7.global_transform
+		instance.global_transform = $pistol/spawning_pos.global_transform
 		get_parent().add_child(instance)
+		$gun_shot.play()
 
 
 func _on_ps_timer_timeout():
