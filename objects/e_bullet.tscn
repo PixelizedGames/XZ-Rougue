@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dykrl0jcycxi0"]
+[gd_scene load_steps=5 format=3 uid="uid://dykrl0jcycxi0"]
 
 [ext_resource type="Script" uid="uid://bo4s5jllj1cfo" path="res://scripts/e_bullet.tres.gd" id="1_4hhe6"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hhe6"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_sxhdm"]
+material = SubResource("StandardMaterial3D_4hhe6")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4hhe6"]
 

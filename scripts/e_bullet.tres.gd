@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+class_name ebullet
 
 const SPEED = 1.0
 const JUMP_VELOCITY = 4.5

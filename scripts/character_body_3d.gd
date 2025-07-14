@@ -6,6 +6,7 @@ var PSReady = true
 var SPEEDY = 0
 var hack_g = 1
 var hack_s = 1
+var health = 100
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
@@ -16,8 +17,8 @@ const MIN_LOOK_ANGLE = -90.0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _physics_process(delta: float) -> void:
+	
 	if Input.is_action_pressed("hack"):
 		hack_g = 0.1
 		hack_s = 3
@@ -35,15 +36,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("s") or Input.is_action_pressed("a") or Input.is_action_pressed("w") or Input.is_action_pressed("d"):
 		if SPEED == 9 and not $AudioStreamPlayer3D.playing:
 			$AudioStreamPlayer3D.play()
+			GlobalVariables.run_audio = true
 		if SPEED == 2 and not $AudioStreamPlayer3D2.playing:
 			$AudioStreamPlayer3D2.play()
+			GlobalVariables.walk_audio = true
 	else:
 		$AudioStreamPlayer3D.stop()
 		$AudioStreamPlayer3D2.stop()
+		GlobalVariables.run_audio = false
+		GlobalVariables.walk_audio = false
 	if not is_on_floor():
 		$AudioStreamPlayer3D.stop()
 		$AudioStreamPlayer3D2.stop()
-
+		GlobalVariables.run_audio = false
+		GlobalVariables.walk_audio = false
 	if not is_on_floor():
 		velocity += get_gravity() * hack_g * delta 
 		SPEEDY = 3
@@ -88,5 +94,5 @@ func _on_ps_timer_timeout():
 
 
 func _on_area_3d_body_entered(body):
-	if body is enemy:
-		queue_free()
+	if body is ebullet:
+		get_tree().quit()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca5yvpl8qril5"]
+[gd_scene load_steps=15 format=3 uid="uid://ca5yvpl8qril5"]
 
 [ext_resource type="Script" uid="uid://cljqpaj7kw56g" path="res://scripts/enemy_guard.gd" id="1_vktuh"]
+[ext_resource type="AudioStream" uid="uid://bgur4m36yyqw6" path="res://audio/walking-sound-effect-272246.mp3" id="2_dltxv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vktuh"]
 albedo_color = Color(1, 0, 0, 1)
@@ -19,6 +20,20 @@ material = SubResource("StandardMaterial3D_dltxv")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vktuh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vktuh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_168h7"]
+albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vktuh"]
+material = SubResource("StandardMaterial3D_168h7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwkfm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dltxv"]
+material = SubResource("StandardMaterial3D_wwkfm")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dltxv"]
 
 [node name="enemy guard" type="CharacterBody3D"]
 script = ExtResource("1_vktuh")
@@ -42,19 +57,97 @@ transform = Transform3D(1.22174, 0, 0, 0, 1.1895, 0, 0, 0, 1.21726, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
 shape = SubResource("CapsuleShape3D_vktuh")
 
-[node name="shot area" type="Area3D" parent="."]
+[node name="sight" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="shot area"]
-transform = Transform3D(12.69, 0, 0, 0, 1.9, 0, 0, 0, 12.2, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sight"]
+transform = Transform3D(11.0941, 0, 0, 0, 1.9, 0, 0, 0, 19.7643, 0, 0, -10.2404)
 shape = SubResource("CylinderShape3D_vktuh")
 
 [node name="shoot_delay" type="Timer" parent="."]
 
-[node name="spawn_pos" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.898999)
+[node name="pistol" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0596037, 0, -3.93432e-08, 0, 0.0915851, 0, 5.21072e-09, 0, -0.450033, 0.453625, 0.191451, -0.526049)
+mesh = SubResource("BoxMesh_vktuh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(1, 0, 0, 0, 1.92397, 0, 0, 0, 0.240742, -0.0127068, -1.09428, -0.379646)
+mesh = SubResource("BoxMesh_vktuh")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(0.190973, 4.71577e-08, 0, -1.87666e-08, 0.203253, 1.76785e-17, 0, 4.96578e-18, -0.0299677, 0.01616, 0.554641, 0.482778)
+mesh = SubResource("BoxMesh_vktuh")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(0.190973, 4.71577e-08, 0, -1.87666e-08, 0.203253, 1.76785e-17, 0, 4.96578e-18, -0.0299677, -0.270745, 0.554641, -0.48188)
+mesh = SubResource("BoxMesh_vktuh")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(0.190973, 4.71577e-08, 0, -1.87666e-08, 0.203253, 1.76785e-17, 0, 4.96578e-18, -0.0299677, 0.235524, 0.55194, -0.482237)
+mesh = SubResource("BoxMesh_vktuh")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(-0.780344, 1.42109e-14, -2.11758e-22, 0, 3.9825e-08, 0.457525, 1.77636e-15, -0.185414, 4.06996e-09, 0.016602, 0.204273, 0.314631)
+mesh = SubResource("CylinderMesh_dltxv")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="pistol"]
+transform = Transform3D(-16.7775, 0, -1.10745e-05, 0, 10.9188, 0, 1.46673e-06, 0, -2.22206, 4.76837e-07, -0.564882, 0.485091)
+light_color = Color(1, 1, 0.407843, 1)
+light_energy = 20.0
+spot_range = 25.0
+spot_angle = 30.0
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="pistol"]
+transform = Transform3D(0.281221, 5.65335e-08, 0, -2.76351e-08, 0.243663, 8.88773e-17, 6.66134e-16, 5.95321e-18, -0.15066, 0.0161633, -0.573147, 0.404657)
+mesh = SubResource("BoxMesh_vktuh")
+skeleton = NodePath("../..")
+
+[node name="spawn_pos" type="Node3D" parent="pistol"]
+transform = Transform3D(-3.3555, 1.46674e-06, -1.28226e-14, 0, -4.77276e-07, -2.18376, -3.88517e-08, -2.22206, 1.94259e-08, -1.46296, -2.09042, 0.265085)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_dltxv")
+autoplay = true
+max_distance = 60.0
+parameters/looping = true
+
+[node name="audio" type="Timer" parent="."]
+
+[node name="loud_audio" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="loud_audio"]
+transform = Transform3D(40, 0, 0, 0, 4, 0, 0, 0, 40, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dltxv")
+
+[node name="quiet_audio" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="quiet_audio"]
+transform = Transform3D(15, 0, 0, 0, 4, 0, 0, 0, 15, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dltxv")
+
+[node name="turn" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="turn2" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]
 [connection signal="body_entered" from="Enemy" to="." method="_on_enemy_body_entered"]
-[connection signal="body_entered" from="shot area" to="." method="_on_shot_area_body_entered"]
+[connection signal="body_entered" from="sight" to="." method="_on_shot_area_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_shot_area_body_exited"]
 [connection signal="timeout" from="shoot_delay" to="." method="_on_shoot_delay_timeout"]
+[connection signal="timeout" from="audio" to="." method="_on_audio_timeout"]
+[connection signal="area_entered" from="loud_audio" to="." method="_on_loud_audio_area_entered"]
+[connection signal="body_entered" from="loud_audio" to="." method="_on_loud_audio_body_entered"]
+[connection signal="body_exited" from="loud_audio" to="." method="_on_loud_audio_body_exited"]
+[connection signal="body_entered" from="quiet_audio" to="." method="_on_quiet_audio_body_entered"]
+[connection signal="body_exited" from="quiet_audio" to="." method="_on_quiet_audio_body_exited"]
+[connection signal="timeout" from="turn" to="." method="_on_turn_timeout"]
+[connection signal="timeout" from="turn2" to="." method="_on_turn_timeout"]
