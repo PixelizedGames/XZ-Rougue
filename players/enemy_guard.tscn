@@ -107,7 +107,7 @@ mesh = SubResource("BoxMesh_vktuh")
 skeleton = NodePath("../..")
 
 [node name="spawn_pos" type="Node3D" parent="pistol"]
-transform = Transform3D(-3.3555, 1.46674e-06, -1.28226e-14, 0, -4.77276e-07, -2.18376, -3.88517e-08, -2.22206, 1.94259e-08, -1.46296, -2.09042, 0.265085)
+transform = Transform3D(-3.3555, 1.46674e-06, -1.28226e-14, 0, -4.77276e-07, -2.18376, -3.88517e-08, -2.22206, 1.94259e-08, 0.0304174, 0.13336, 0.508605)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_dltxv")

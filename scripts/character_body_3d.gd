@@ -45,6 +45,10 @@ func _physics_process(delta: float) -> void:
 		$AudioStreamPlayer3D2.stop()
 		GlobalVariables.run_audio = false
 		GlobalVariables.walk_audio = false
+	if Input.is_action_pressed("aim"):
+		$Camera3D.fov = 45
+	else:
+		$Camera3D.fov = 90
 	if not is_on_floor():
 		$AudioStreamPlayer3D.stop()
 		$AudioStreamPlayer3D2.stop()
@@ -87,10 +91,12 @@ func _spawn_bullet():
 		instance.global_transform = $pistol/spawning_pos.global_transform
 		get_parent().add_child(instance)
 		$gun_shot.play()
+		GlobalVariables.shot_audio = true
 
 
 func _on_ps_timer_timeout():
 	PSReady = true
+	GlobalVariables.shot_audio = false
 
 
 func _on_area_3d_body_entered(body):

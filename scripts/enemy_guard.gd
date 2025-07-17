@@ -21,6 +21,7 @@ func _ready() -> void:
 	audio.start()
 func _physics_process(delta):
 	if inrange == true:
+		await get_tree().create_timer(0.5).timeout
 		shoot()
 		
 	if health <=0:
@@ -35,8 +36,10 @@ func _physics_process(delta):
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
 	move_and_slide()
-		
+	
 	if audio_range1 and GlobalVariables.run_audio:
+		targetable = true
+	elif audio_range1 and GlobalVariables.shot_audio:
 		targetable = true
 	elif audio_range2 and GlobalVariables.walk_audio:
 		targetable = true
@@ -46,6 +49,7 @@ func _physics_process(delta):
 
 func _on_enemy_body_entered(body):
 	if body is PBullet and imunity == false:
+		look_at(player.global_transform.origin, Vector3.UP)
 		timer.start()
 		health -= 3
 
@@ -80,7 +84,6 @@ func _on_loud_audio_body_entered(body: Node3D) -> void:
 func _on_loud_audio_body_exited(body: Node3D) -> void:
 	if body is player:
 		audio_range1 = false
-
 func _on_quiet_audio_body_entered(body: Node3D) -> void:
 	if body is player:
 		audio_range2 = true

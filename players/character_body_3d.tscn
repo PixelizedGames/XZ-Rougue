@@ -42,7 +42,7 @@ stream = ExtResource("2_168h7")
 volume_db = -30.0
 
 [node name="pistol" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0596037, 0, -3.93432e-08, 0, 0.0915851, 0, 5.21072e-09, 0, -0.450033, 0.453625, 0.191451, -0.526049)
+transform = Transform3D(-0.0596037, 0, -3.93432e-08, 0, 0.0915851, 0, 5.21072e-09, 0, -0.450033, 0.552645, 0.191451, -0.526049)
 mesh = SubResource("BoxMesh_72r58")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="pistol"]
@@ -83,7 +83,7 @@ mesh = SubResource("BoxMesh_72r58")
 skeleton = NodePath("../..")
 
 [node name="spawning_pos" type="Node3D" parent="pistol"]
-transform = Transform3D(-1, 1.04907e-06, -3.82137e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, -4.76837e-07, 0.206795, 5.19077)
+transform = Transform3D(-1, 1.04907e-06, -3.82138e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, 5.24521e-06, 0.206795, 0.757351)
 
 [node name="PSTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -97,7 +97,6 @@ shape = SubResource("CapsuleShape3D_168h7")
 [node name="gun_shot" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_72r58")
 max_db = 6.0
-autoplay = true
 
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_3d_body_entered"]
