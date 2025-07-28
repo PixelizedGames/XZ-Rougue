@@ -7,7 +7,7 @@ var inrange = false
 var audio_range1 = false
 var audio_range2 = false
 var targetable = false
-const SPEED = 5.0
+var SPEED = 2
 const JUMP_VELOCITY = 4.5
 @onready var timer = $Timer
 @onready var delay_timer = $shoot_delay
@@ -15,8 +15,11 @@ const JUMP_VELOCITY = 4.5
 @onready var bullet_scene = preload("res://objects/e_bullet.tscn")
 @onready var spawn_pos = $pistol/spawn_pos
 @onready var audio = $audio
+@onready var animation = $enemy_godot/AnimationPlayer
 
 func _ready() -> void:
+	SPEED = 2
+	animation.play("walking")
 	$AudioStreamPlayer3D.play()
 	audio.start()
 func _physics_process(delta):
@@ -32,6 +35,13 @@ func _physics_process(delta):
 		
 	if targetable == true or inrange == true:
 		look_at(player.global_transform.origin, Vector3.UP)
+		SPEED = 8
+		animation.play("running")
+		animation.speed_scale = 5
+	else:
+		SPEED = 2
+		animation.play("walking")
+		animation.speed_scale = 2.8
 	var direction = -transform.basis.z 
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED

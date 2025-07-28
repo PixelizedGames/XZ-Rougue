@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbkaisp7240xi"]
+
+[ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_evyck"]
+[ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="2_54fhk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_evyck"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_54fhk"]
+sky_material = SubResource("ProceduralSkyMaterial_evyck")
+
+[sub_resource type="Environment" id="Environment_43ii6"]
+background_mode = 2
+sky = SubResource("Sky_54fhk")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="main level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_43ii6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(136.443, 0, 0, 0, 0.2, 0, 0, 0, 124.992, 0, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("2_54fhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.2935, 1.10825, 59.0507)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.916059, 0, 0, 0, 15.8579, 0, 0, 0, 124.992, -68, 8, 0)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.916059, 0, 0, 0, 15.8579, 0, 0, 0, 124.992, 68, 8, 0)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(136.443, 0, 0, 0, 31.7513, 0, 0, 0, 1.24992, 0, 0, 63)
+
+[node name="StaticBody3D5" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(136.443, 0, 0, 0, 15.3677, 0, 0, 0, 1.24992, 0, 8, -62)
