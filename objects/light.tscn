@@ -4,6 +4,8 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ucm"]
 transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_o80vl"]
 material = SubResource("StandardMaterial3D_d1ucm")
@@ -19,10 +21,10 @@ script = ExtResource("1_q1r0e")
 shape = SubResource("BoxShape3D_gs260")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(2.19932, 0, 0, 0, -1.19189e-08, 9.38833, 0, -0.272673, -4.10377e-07, 0, 0, 0)
+transform = Transform3D(2.19932, 0, 0, 0, -1.04987e-08, 9.38923, 0, -0.240182, -2.68562e-10, 0, -0.646659, 0)
 light_energy = 2.0
-spot_range = 30.0
-spot_angle = 60.0
+spot_range = 400.0
+spot_angle = 80.0
 
 [node name="Timer" type="Timer" parent="."]
 

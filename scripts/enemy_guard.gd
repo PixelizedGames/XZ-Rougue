@@ -20,7 +20,6 @@ const JUMP_VELOCITY = 4.5
 func _ready() -> void:
 	SPEED = 2
 	animation.play("walking")
-	$AudioStreamPlayer3D.play()
 	audio.start()
 func _physics_process(delta):
 	if inrange == true:
@@ -35,13 +34,15 @@ func _physics_process(delta):
 		
 	if targetable == true or inrange == true:
 		look_at(player.global_transform.origin, Vector3.UP)
-		SPEED = 8
+		SPEED = 5
 		animation.play("running")
-		animation.speed_scale = 5
+		animation.speed_scale = 9
+		$AudioStreamPlayer3D.play()
 	else:
-		SPEED = 2
+		SPEED = 1.5
 		animation.play("walking")
-		animation.speed_scale = 2.8
+		animation.speed_scale = 3
+		$AudioStreamPlayer3D2.play()
 	var direction = -transform.basis.z 
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED

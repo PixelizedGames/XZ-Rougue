@@ -1,44 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbkaisp7240xi"]
+[gd_scene load_steps=11 format=3 uid="uid://bbkaisp7240xi"]
 
+[ext_resource type="PackedScene" uid="uid://c6krwdue54ni1" path="res://objects/clear_box.tscn" id="1_43ii6"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_evyck"]
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="2_54fhk"]
+[ext_resource type="PackedScene" uid="uid://y4rdy12ev7tw" path="res://objects/pink_sheep.tscn" id="3_54fhk"]
+[ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="5_o7jp2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_evyck"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_43ii6"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_54fhk"]
-sky_material = SubResource("ProceduralSkyMaterial_evyck")
+[sub_resource type="Sky" id="Sky_o7jp2"]
+sky_material = SubResource("ProceduralSkyMaterial_43ii6")
 
-[sub_resource type="Environment" id="Environment_43ii6"]
+[sub_resource type="Environment" id="Environment_i2c4w"]
 background_mode = 2
-sky = SubResource("Sky_54fhk")
+sky = SubResource("Sky_o7jp2")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="main level" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_ay8i8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_et42k"]
+
+[node name="Main game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_43ii6")
+environment = SubResource("Environment_i2c4w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0, 0, 0, 1)
+light_energy = 0.0
 shadow_enabled = true
 
-[node name="StaticBody3D" parent="." instance=ExtResource("1_evyck")]
-transform = Transform3D(136.443, 0, 0, 0, 0.2, 0, 0, 0, 124.992, 0, 0, 0)
+[node name="clear_box" parent="." instance=ExtResource("1_43ii6")]
+transform = Transform3D(1, 0, 0, 0, 11.4576, 0, 0, 0, 13.818, 72, 6, -72)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(176.177, 0, 0, 0, 0.263938, 0, 0, 0, 155.345, 0, 0, 0)
+
+[node name="box" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_ay8i8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_et42k")
 
 [node name="player" parent="." instance=ExtResource("2_54fhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.2935, 1.10825, 59.0507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 1, 75)
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("1_evyck")]
-transform = Transform3D(0.916059, 0, 0, 0, 15.8579, 0, 0, 0, 124.992, -68, 8, 0)
+transform = Transform3D(136, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 0, 5, 78)
 
 [node name="StaticBody3D3" parent="." instance=ExtResource("1_evyck")]
-transform = Transform3D(0.916059, 0, 0, 0, 15.8579, 0, 0, 0, 124.992, 68, 8, 0)
+transform = Transform3D(136, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 0, 5, -78)
 
 [node name="StaticBody3D4" parent="." instance=ExtResource("1_evyck")]
-transform = Transform3D(136.443, 0, 0, 0, 31.7513, 0, 0, 0, 1.24992, 0, 0, 63)
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 143.616, 68, 5, 7)
 
 [node name="StaticBody3D5" parent="." instance=ExtResource("1_evyck")]
-transform = Transform3D(136.443, 0, 0, 0, 15.3677, 0, 0, 0, 1.24992, 0, 8, -62)
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 163.2, -68, 5, 0)
+
+[node name="StaticBody3D6" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 26.112, 50, 5, 59)
+
+[node name="StaticBody3D7" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(12.24, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 56, 5, 46)
+
+[node name="StaticBody3D8" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 26.112, 7, 5, 59)
+
+[node name="StaticBody3D9" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(36.72, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 33, 5, 46)
+
+[node name="StaticBody3D10" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 26.112, 30, 5, 33)
+
+[node name="StaticBody3D11" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 26.112, 30, 5, 59)
+
+[node name="StaticBody3D12" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(18.36, 0, 0, 0, 11.317, 0, 0, 0, 0.66, -2, 5, 46)
+
+[node name="StaticBody3D13" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 67.8912, -11, 5, 44)
+
+[node name="StaticBody3D14" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(18.36, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 77, 5, -65)
+
+[node name="StaticBody3D15" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(18.36, 0, 0, 0, 11.317, 0, 0, 0, 0.66, 77, 5, -78)
+
+[node name="StaticBody3D16" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(0.66, 0, 0, 0, 11.317, 0, 0, 0, 18.2784, 86, 5, -72)
+
+[node name="StaticBody3D17" parent="." instance=ExtResource("1_evyck")]
+transform = Transform3D(10.0355, 0, 0, 0, 4.5268, 0, 0, 0, 14.6227, 81, 0, -72)
+
+[node name="pink sheep" parent="." instance=ExtResource("3_54fhk")]
+transform = Transform3D(2.59808, 0, -1.5, 0, 3, 0, 1.5, 0, 2.59808, 79.363, 0.3, -72.238)
+
+[node name="light" parent="." instance=ExtResource("5_o7jp2")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 60, 11, -70)

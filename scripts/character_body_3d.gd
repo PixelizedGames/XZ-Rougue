@@ -13,7 +13,7 @@ const MIN_LOOK_ANGLE = -90.0
 @onready var MOUSE_SENSITIVITY = 0.1
 @onready var bullet_scene = preload("res://objects/p_bullet.tscn")
 @onready var PSTimer = $PSTimer
-
+@onready var animation = $enemy_godot/AnimationPlayer
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -37,14 +37,19 @@ func _physics_process(delta: float) -> void:
 		if SPEED == 9 and not $AudioStreamPlayer3D.playing:
 			$AudioStreamPlayer3D.play()
 			GlobalVariables.run_audio = true
+			animation.play("running")
+			animation.speed_scale = 8
 		if SPEED == 2 and not $AudioStreamPlayer3D2.playing:
 			$AudioStreamPlayer3D2.play()
 			GlobalVariables.walk_audio = true
+			animation.play("walking")
+			animation.speed_scale = 2.8
 	else:
 		$AudioStreamPlayer3D.stop()
 		$AudioStreamPlayer3D2.stop()
 		GlobalVariables.run_audio = false
 		GlobalVariables.walk_audio = false
+		animation.stop()
 	if Input.is_action_pressed("aim"):
 		$Camera3D.fov = 45
 	else:
