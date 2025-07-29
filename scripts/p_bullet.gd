@@ -26,3 +26,7 @@ func _on_bullet_area_body_entered(body):
 
 func _on_timer_3_timeout():
 	queue_free()
+
+
+func _on_bullet_area_area_entered(area: Area3D) -> void:
+	timer3.start()

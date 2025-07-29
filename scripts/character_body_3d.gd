@@ -7,18 +7,19 @@ var SPEEDY = 0
 var hack_g = 1
 var hack_s = 1
 var health = 100
+var imunity = false
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
 @onready var MOUSE_SENSITIVITY = 0.1
 @onready var bullet_scene = preload("res://objects/p_bullet.tscn")
 @onready var PSTimer = $PSTimer
+@onready var Imunity_timer = $ITimer
 @onready var animation = $enemy_godot/AnimationPlayer
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _physics_process(delta: float) -> void:
-	
 	if Input.is_action_pressed("hack"):
 		hack_g = 0.1
 		hack_s = 3
@@ -75,6 +76,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	if health <= 0:
+		get_tree().quit()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -85,7 +88,7 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  # Show mouse when exiting
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
 		get_tree().quit()
 
 func _spawn_bullet():
@@ -105,5 +108,11 @@ func _on_ps_timer_timeout():
 
 
 func _on_area_3d_body_entered(body):
-	if body is ebullet:
-		get_tree().quit()
+	if body is ebullet and imunity == false:
+		imunity = true
+		health -= 40
+		Imunity_timer.start()
+
+
+func _on_timer_timeout() -> void:
+	imunity = false

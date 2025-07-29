@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dykrl0jcycxi0"]
+[gd_scene load_steps=6 format=3 uid="uid://dykrl0jcycxi0"]
 
 [ext_resource type="Script" uid="uid://bo4s5jllj1cfo" path="res://scripts/e_bullet.tres.gd" id="1_4hhe6"]
+[ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="2_v4vvr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hhe6"]
 albedo_color = Color(1, 0, 0, 1)
@@ -20,3 +21,7 @@ mesh = SubResource("CylinderMesh_sxhdm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_4hhe6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_v4vvr")
+autoplay = true

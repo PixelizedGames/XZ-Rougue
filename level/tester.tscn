@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt7kk78mdocxd"]
+[gd_scene load_steps=11 format=3 uid="uid://dt7kk78mdocxd"]
 
 [ext_resource type="Script" uid="uid://hsx2yw6ff17e" path="res://scripts/tester.gd" id="1_28obw"]
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="1_du0rs"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="4_l4f2d"]
 [ext_resource type="PackedScene" uid="uid://cfn53jv4bc7ux" path="res://objects/light_pole.tscn" id="5_28obw"]
 [ext_resource type="PackedScene" uid="uid://ca5yvpl8qril5" path="res://players/enemy_guard.tscn" id="6_iy08k"]
+[ext_resource type="PackedScene" uid="uid://bvf87u02aedp8" path="res://objects/door.tscn" id="7_hiym8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1qem2"]
 sky_top_color = Color(0.345475, 0.292224, 0.293744, 1)
@@ -168,6 +169,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 147.21
 
 [node name="box7" parent="." instance=ExtResource("2_1qem2")]
 transform = Transform3D(1.69566, 0, 0, 0, 11.8055, 0, 0, 0, 11.1866, 56.0745, 4.13123, -5.01401)
+
+[node name="door" parent="." instance=ExtResource("7_hiym8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32801, 1.75169, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

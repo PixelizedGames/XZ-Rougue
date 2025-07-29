@@ -23,7 +23,7 @@ func _ready() -> void:
 	audio.start()
 func _physics_process(delta):
 	if inrange == true:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1).timeout
 		shoot()
 		
 	if health <=0:
@@ -106,3 +106,10 @@ func _on_quiet_audio_body_exited(body: Node3D) -> void:
 func _on_turn_timeout() -> void:
 	rotation.y += deg_to_rad(180)
 	$turn.start()
+
+
+func _on_enemy__head_hitbox_2_body_entered(body: Node3D) -> void:
+	if body is PBullet and imunity == false:
+		look_at(player.global_transform.origin, Vector3.UP)
+		timer.start()
+		health -= 10
