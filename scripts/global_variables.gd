@@ -2,6 +2,7 @@ extends Node
 var run_audio = false
 var walk_audio = false
 var shot_audio = false
+var menu = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

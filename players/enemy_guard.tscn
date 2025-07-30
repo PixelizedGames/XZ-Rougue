@@ -624,11 +624,7 @@ transform = Transform3D(15, 0, 0, 0, 4, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("CylinderShape3D_dltxv")
 
 [node name="turn" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
-[node name="turn2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="enemy_godot" type="Node3D" parent="."]
@@ -826,4 +822,3 @@ parameters/looping = true
 [connection signal="body_entered" from="quiet_audio" to="." method="_on_quiet_audio_body_entered"]
 [connection signal="body_exited" from="quiet_audio" to="." method="_on_quiet_audio_body_exited"]
 [connection signal="timeout" from="turn" to="." method="_on_turn_timeout"]
-[connection signal="timeout" from="turn2" to="." method="_on_turn_timeout"]

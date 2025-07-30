@@ -353,5 +353,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6716, 0, -39.6475)
 [node name="enemy guards" parent="." instance=ExtResource("7_05d1k")]
 transform = Transform3D(-0.0125834, 0, 0.999921, 0, 1, 0, -0.999921, 0, -0.0125834, 28.2673, 2.418, 1.30931)
 
-[node name="enemy guard2" parent="enemy guards" instance=ExtResource("7_05d1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0131, 0, 38.4378)
+[node name="enemy guard2" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(-0.0125834, 0, 0.999921, 0, 1, 0, -0.999921, 0, -0.0125834, 66.891, 2.418, 15.8375)

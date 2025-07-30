@@ -10,8 +10,9 @@ var SPEED = 1
 func _process(delta: float) -> void:
 	pass
 func _physics_process(delta: float) -> void:
-	position+=transform.basis * Vector3(0,-SPEED,0)
-	move_and_slide()
+	if GlobalVariables.menu == false:
+		position+=transform.basis * Vector3(0,-SPEED,0)
+		move_and_slide()
 
 func _ready():
 	timer.start()

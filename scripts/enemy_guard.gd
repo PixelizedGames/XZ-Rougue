@@ -22,31 +22,33 @@ func _ready() -> void:
 	animation.play("walking")
 	audio.start()
 func _physics_process(delta):
-	if inrange == true:
+	if inrange == true and GlobalVariables.menu == false:
 		await get_tree().create_timer(1).timeout
 		shoot()
 		
 	if health <=0:
 		queue_free()
 	
-	if not is_on_floor():
+	if not is_on_floor() and GlobalVariables.menu == false:
 		velocity.y += get_gravity().y * delta
 		
-	if targetable == true or inrange == true:
+	if targetable == true or inrange == true and GlobalVariables.menu == false:
 		look_at(player.global_transform.origin, Vector3.UP)
 		SPEED = 5
 		animation.play("running")
 		animation.speed_scale = 9
 		$AudioStreamPlayer3D.play()
 	else:
-		SPEED = 1.5
-		animation.play("walking")
-		animation.speed_scale = 3
-		$AudioStreamPlayer3D2.play()
-	var direction = -transform.basis.z 
-	velocity.x = direction.x * SPEED
-	velocity.z = direction.z * SPEED
-	move_and_slide()
+		if GlobalVariables.menu == false:
+			SPEED = 1.5
+			animation.play("walking")
+			animation.speed_scale = 3
+			$AudioStreamPlayer3D2.play()
+	if GlobalVariables.menu == false:
+		var direction = -transform.basis.z 
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+		move_and_slide()
 	
 	if audio_range1 and GlobalVariables.run_audio:
 		targetable = true
@@ -59,7 +61,7 @@ func _physics_process(delta):
 
 
 func _on_enemy_body_entered(body):
-	if body is PBullet and imunity == false:
+	if body is PBullet and imunity == false and GlobalVariables.menu == false:
 		look_at(player.global_transform.origin, Vector3.UP)
 		timer.start()
 		health -= 3
@@ -68,7 +70,7 @@ func _on_timer_timeout():
 	imunity = false
 	
 func shoot():
-	if shoot_avalible == true:
+	if shoot_avalible == true and GlobalVariables.menu == false:
 		shoot_avalible = false
 		delay_timer.start()
 		var instance = bullet_scene.instantiate()
@@ -76,12 +78,12 @@ func shoot():
 		get_parent().add_child(instance)
 
 func _on_shot_area_body_entered(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		inrange = true
 func _on_shoot_delay_timeout() -> void:
 	shoot_avalible = true
 func _on_shot_area_body_exited(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		inrange = false
 
 func _on_audio_timeout() -> void:
@@ -90,16 +92,16 @@ func _on_audio_timeout() -> void:
 
 
 func _on_loud_audio_body_entered(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		audio_range1 = true
 func _on_loud_audio_body_exited(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		audio_range1 = false
 func _on_quiet_audio_body_entered(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		audio_range2 = true
 func _on_quiet_audio_body_exited(body: Node3D) -> void:
-	if body is player:
+	if body is player and GlobalVariables.menu == false:
 		audio_range2 = false
 
 
@@ -109,7 +111,7 @@ func _on_turn_timeout() -> void:
 
 
 func _on_enemy__head_hitbox_2_body_entered(body: Node3D) -> void:
-	if body is PBullet and imunity == false:
+	if body is PBullet and imunity == false and GlobalVariables.menu == false:
 		look_at(player.global_transform.origin, Vector3.UP)
 		timer.start()
 		health -= 10

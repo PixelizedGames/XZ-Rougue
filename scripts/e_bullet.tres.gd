@@ -6,5 +6,10 @@ const JUMP_VELOCITY = 4.5
 
 
 func _physics_process(delta: float) -> void:
-	position+=transform.basis * Vector3(0,-SPEED,0)
-	move_and_slide()
+	if GlobalVariables.menu == false:
+		position+=transform.basis * Vector3(0,-SPEED,0)
+		move_and_slide()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

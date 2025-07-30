@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=4 uid="uid://cqljr0cnb8ux5"]
+[gd_scene load_steps=37 format=4 uid="uid://cqljr0cnb8ux5"]
 
 [ext_resource type="Script" uid="uid://bvyi0t5o54ccw" path="res://scripts/character_body_3d.gd" id="1_ual4q"]
 [ext_resource type="AudioStream" uid="uid://bgur4m36yyqw6" path="res://audio/walking-sound-effect-272246.mp3" id="2_168h7"]
 [ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="3_72r58"]
+[ext_resource type="Theme" uid="uid://b334ags7gc87d" path="res://png/buttonTheme.tres" id="4_wwkfm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ual4q"]
 
@@ -616,7 +617,7 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81654, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1.81654, 0)
-bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/1/rotation = Quaternion(0.11046, 0, 0, 0.993881)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
@@ -630,14 +631,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685894, 0)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.685894, 0)
-bones/3/rotation = Quaternion(0, 0, 0, 1)
+bones/3/rotation = Quaternion(-0.0954341, 0, 0, 0.995436)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Bone.004"
 bones/4/parent = 1
 bones/4/rest = Transform3D(0, 1, -3.55271e-15, -1, 0, 7.54979e-08, 7.54979e-08, -3.55271e-15, 1, 0, 1.94337, 0)
 bones/4/enabled = true
 bones/4/position = Vector3(0, 1.94337, 0)
-bones/4/rotation = Quaternion(-2.66925e-08, -2.66925e-08, -0.707107, 0.707107)
+bones/4/rotation = Quaternion(-0.000336603, 0.000336548, -0.707152, 0.707061)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "Bone.005"
 bones/5/parent = 4
@@ -658,7 +659,7 @@ bones/7/parent = 1
 bones/7/rest = Transform3D(0, -1, 3.55271e-15, 1, 0, 7.54979e-08, -7.54979e-08, -3.55271e-15, 1, 0, 1.94337, 0)
 bones/7/enabled = true
 bones/7/position = Vector3(0, 1.94337, 0)
-bones/7/rotation = Quaternion(-2.66925e-08, 2.66925e-08, 0.707107, 0.707107)
+bones/7/rotation = Quaternion(0.000291026, 0.000291083, 0.707073, 0.707141)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "Bone.008"
 bones/8/parent = 7
@@ -686,14 +687,14 @@ bones/11/parent = 10
 bones/11/rest = Transform3D(1, 0, -7.54979e-08, 7.54979e-08, 0, 1, 0, -1, 0, 0, 0.636901, 0)
 bones/11/enabled = true
 bones/11/position = Vector3(0, 0.636901, 0)
-bones/11/rotation = Quaternion(-0.707107, -2.66925e-08, 2.66925e-08, 0.707107)
+bones/11/rotation = Quaternion(-0.707107, -0.00046509, -0.000465036, 0.707107)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "Bone.012"
 bones/12/parent = 11
 bones/12/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31897, 0)
 bones/12/enabled = true
 bones/12/position = Vector3(0, 2.31897, 0)
-bones/12/rotation = Quaternion(1.43327e-08, 0, 0.189842, 0.981815)
+bones/12/rotation = Quaternion(3.17476e-08, -1.86006e-17, 0.42047, 0.907307)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "Bone.013"
 bones/13/parent = -1
@@ -707,14 +708,14 @@ bones/14/parent = 13
 bones/14/rest = Transform3D(1, 0, 7.54979e-08, -7.54979e-08, 0, 1, 0, -1, 0, 0, 0.489924, 0)
 bones/14/enabled = true
 bones/14/position = Vector3(0, 0.489924, 0)
-bones/14/rotation = Quaternion(-0.707107, 2.66925e-08, -2.66925e-08, 0.707107)
+bones/14/rotation = Quaternion(-0.707107, -0.000322842, -0.000322895, 0.707107)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "Bone.015"
 bones/15/parent = 14
 bones/15/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43329, 0)
 bones/15/enabled = true
 bones/15/position = Vector3(0, 2.43329, 0)
-bones/15/rotation = Quaternion(0, 0, 0, 1)
+bones/15/rotation = Quaternion(0, 0, -0.000436275, 1)
 bones/15/scale = Vector3(1, 1, 1)
 
 [node name="Cone" type="MeshInstance3D" parent="enemy_godot/Armature/Skeleton3D"]
@@ -775,6 +776,81 @@ wait_time = 0.2
 transform = Transform3D(0.555767, 0, 0, 0, 0.252031, 0, 0, 0, 0.862413, 0.18129, 0.452625, -0.664707)
 shape = SubResource("CapsuleShape3D_ual4q")
 
+[node name="Menu" type="CanvasModulate" parent="."]
+
+[node name="MainMenu" type="Node2D" parent="Menu"]
+visible = false
+
+[node name="Resume" type="Button" parent="Menu/MainMenu"]
+offset_left = 864.0
+offset_top = 312.0
+offset_right = 1018.0
+offset_bottom = 381.0
+theme = ExtResource("4_wwkfm")
+text = "Resume"
+
+[node name="Settings" type="Button" parent="Menu/MainMenu"]
+offset_left = 864.0
+offset_top = 408.0
+offset_right = 1018.0
+offset_bottom = 477.0
+theme = ExtResource("4_wwkfm")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="Menu/MainMenu"]
+offset_left = 864.0
+offset_top = 504.0
+offset_right = 1018.0
+offset_bottom = 573.0
+theme = ExtResource("4_wwkfm")
+text = "Exit"
+
+[node name="Settings" type="Node2D" parent="Menu"]
+
+[node name="Controlls" type="Button" parent="Menu/Settings"]
+offset_left = 864.0
+offset_top = 312.0
+offset_right = 1018.0
+offset_bottom = 381.0
+theme = ExtResource("4_wwkfm")
+text = "Controlls"
+
+[node name="Accsesibility" type="Button" parent="Menu/Settings"]
+offset_left = 864.0
+offset_top = 408.0
+offset_right = 1018.0
+offset_bottom = 477.0
+theme = ExtResource("4_wwkfm")
+text = "Accsesibility"
+
+[node name="Video settings" type="Button" parent="Menu/Settings"]
+offset_left = 864.0
+offset_top = 504.0
+offset_right = 1018.0
+offset_bottom = 573.0
+theme = ExtResource("4_wwkfm")
+text = "Video Settings"
+
+[node name="Back1" type="Button" parent="Menu/Settings"]
+offset_left = 864.0
+offset_top = 600.0
+offset_right = 1018.0
+offset_bottom = 669.0
+theme = ExtResource("4_wwkfm")
+text = "Back"
+
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="ITimer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Menu/MainMenu/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/MainMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/MainMenu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu/Settings/Controlls" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Settings/Controlls" to="." method="_on_controlls_pressed"]
+[connection signal="pressed" from="Menu/Settings/Accsesibility" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Settings/Accsesibility" to="." method="_on_accsesibility_pressed"]
+[connection signal="pressed" from="Menu/Settings/Video settings" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Settings/Video settings" to="." method="_on_video_settings_pressed"]
+[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_back_1_pressed"]
+[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_back_pressed"]
