@@ -106,7 +106,7 @@ func _on_quiet_audio_body_exited(body: Node3D) -> void:
 func _on_turn_timeout() -> void:
 	rotation.y += deg_to_rad(180)
 	$turn.start()
-
+#test
 
 func _on_enemy__head_hitbox_2_body_entered(body: Node3D) -> void:
 	if body is PBullet and imunity == false:
