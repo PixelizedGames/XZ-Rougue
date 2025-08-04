@@ -806,8 +806,9 @@ theme = ExtResource("4_wwkfm")
 text = "Exit"
 
 [node name="Settings" type="Node2D" parent="Menu"]
+visible = false
 
-[node name="Controlls" type="Button" parent="Menu/Settings"]
+[node name="controlls" type="Button" parent="Menu/Settings"]
 offset_left = 864.0
 offset_top = 312.0
 offset_right = 1018.0
@@ -815,15 +816,15 @@ offset_bottom = 381.0
 theme = ExtResource("4_wwkfm")
 text = "Controlls"
 
-[node name="Accsesibility" type="Button" parent="Menu/Settings"]
+[node name="accsesability" type="Button" parent="Menu/Settings"]
 offset_left = 864.0
 offset_top = 408.0
 offset_right = 1018.0
 offset_bottom = 477.0
 theme = ExtResource("4_wwkfm")
-text = "Accsesibility"
+text = "Accsesability"
 
-[node name="Video settings" type="Button" parent="Menu/Settings"]
+[node name="video settings" type="Button" parent="Menu/Settings"]
 offset_left = 864.0
 offset_top = 504.0
 offset_right = 1018.0
@@ -831,7 +832,7 @@ offset_bottom = 573.0
 theme = ExtResource("4_wwkfm")
 text = "Video Settings"
 
-[node name="Back1" type="Button" parent="Menu/Settings"]
+[node name="back" type="Button" parent="Menu/Settings"]
 offset_left = 864.0
 offset_top = 600.0
 offset_right = 1018.0
@@ -839,18 +840,106 @@ offset_bottom = 669.0
 theme = ExtResource("4_wwkfm")
 text = "Back"
 
+[node name="Controlls" type="Node2D" parent="Menu"]
+visible = false
+
+[node name="back" type="Button" parent="Menu/Controlls"]
+offset_left = 864.0
+offset_top = 600.0
+offset_right = 1018.0
+offset_bottom = 669.0
+theme = ExtResource("4_wwkfm")
+text = "Back"
+
+[node name="Label" type="Label" parent="Menu/Controlls"]
+offset_left = 712.0
+offset_top = 296.0
+offset_right = 1176.0
+offset_bottom = 320.0
+text = "In this current vershion controlls are unable to be changed."
+
+[node name="Label2" type="Label" parent="Menu/Controlls"]
+offset_left = 712.0
+offset_top = 344.0
+offset_right = 1176.0
+offset_bottom = 575.0
+text = "The current controlls are:
+W -  move forward
+A - move left 
+S - move backwards
+D - move right
+LMB - shoot
+RMB - aim
+CTRL - crouch
+Space - jump"
+
+[node name="Accsesibility" type="Node2D" parent="Menu"]
+visible = false
+
+[node name="back" type="Button" parent="Menu/Accsesibility"]
+offset_left = 864.0
+offset_top = 600.0
+offset_right = 1018.0
+offset_bottom = 669.0
+theme = ExtResource("4_wwkfm")
+text = "Back"
+
+[node name="Mouse sens" type="Button" parent="Menu/Accsesibility"]
+offset_left = 864.0
+offset_top = 512.0
+offset_right = 1018.0
+offset_bottom = 544.0
+theme = ExtResource("4_wwkfm")
+toggle_mode = true
+text = "Mouse Sensitivity"
+
+[node name="Flickering_lights" type="Button" parent="Menu/Accsesibility"]
+offset_left = 864.0
+offset_top = 408.0
+offset_right = 1018.0
+offset_bottom = 477.0
+theme = ExtResource("4_wwkfm")
+action_mode = 0
+text = "Flickering lights"
+
+[node name="Mouse slider" type="HSlider" parent="Menu/Accsesibility"]
+offset_left = 864.0
+offset_top = 552.0
+offset_right = 1016.0
+offset_bottom = 568.0
+max_value = 200.0
+value = 100.0
+
+[node name="Video settings" type="Node2D" parent="Menu"]
+
+[node name="back" type="Button" parent="Menu/Video settings"]
+offset_left = 864.0
+offset_top = 600.0
+offset_right = 1018.0
+offset_bottom = 669.0
+theme = ExtResource("4_wwkfm")
+text = "Back"
+
+[node name="Fullscreen" type="Button" parent="Menu/Video settings"]
+offset_left = 864.0
+offset_top = 504.0
+offset_right = 1018.0
+offset_bottom = 573.0
+theme = ExtResource("4_wwkfm")
+text = "Fullscreen"
+
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="ITimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Menu/MainMenu/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/MainMenu/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/MainMenu/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Menu/Settings/Controlls" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu/Settings/Controlls" to="." method="_on_controlls_pressed"]
-[connection signal="pressed" from="Menu/Settings/Accsesibility" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu/Settings/Accsesibility" to="." method="_on_accsesibility_pressed"]
-[connection signal="pressed" from="Menu/Settings/Video settings" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu/Settings/Video settings" to="." method="_on_video_settings_pressed"]
-[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_back_1_pressed"]
-[connection signal="pressed" from="Menu/Settings/Back1" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Settings/controlls" to="." method="_on_controlls_pressed"]
+[connection signal="pressed" from="Menu/Settings/accsesability" to="." method="_on_accsesability_pressed"]
+[connection signal="pressed" from="Menu/Settings/video settings" to="." method="_on_video_settings_pressed"]
+[connection signal="pressed" from="Menu/Settings/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Controlls/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Accsesibility/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Accsesibility/Flickering_lights" to="." method="_on_flickering_lights_pressed"]
+[connection signal="pressed" from="Menu/Video settings/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Video settings/Fullscreen" to="." method="_on_fullscreen_pressed"]

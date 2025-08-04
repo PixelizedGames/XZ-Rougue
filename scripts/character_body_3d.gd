@@ -8,6 +8,7 @@ var hack_g = 1
 var hack_s = 1
 var health = 100
 var imunity = false
+var fullscreen = true
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
@@ -21,6 +22,9 @@ func _ready() -> void:
 	$Menu.visible = false
 	$Menu/MainMenu.visible = false
 	$Menu/Settings.visible = false
+	$Menu/Controlls.visible = false
+	$Menu/Accsesibility.visible = false
+	$"Menu/Video settings".visible = false
 func _physics_process(delta: float) -> void:
 	if $Menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -28,6 +32,8 @@ func _physics_process(delta: float) -> void:
 	if $Menu.visible == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GlobalVariables.menu = false
+		
+	MOUSE_SENSITIVITY = ($"Menu/Accsesibility/Mouse slider".value / 1000)
 	if Input.is_action_pressed("hack"):
 		hack_g = 0.1
 		hack_s = 3
@@ -87,6 +93,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	if health <= 0:
 		get_tree().change_scene_to_file("res://level/start.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and GlobalVariables.menu == false:
@@ -99,6 +106,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and GlobalVariables.menu == false:
 		$Menu.visible = true
 		$Menu/MainMenu.visible = true
+		$Menu/MainMenu.visible = true
+		$Menu/Settings.visible = false
+		$Menu/Controlls.visible = false
+		$Menu/Accsesibility.visible = false
+		$"Menu/Video settings".visible = false
 		
 		
 
@@ -127,40 +139,51 @@ func _on_area_3d_body_entered(body) :
 
 func _on_timer_timeout() -> void:
 	imunity = false
-
-
+	
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://level/start.tscn")
-
-
-
 
 func _on_settings_pressed() -> void:
 	$Menu/MainMenu.visible = false
 	$Menu/Settings.visible = true
-	print($Menu.visible)
+	
 
-
-func _on_controlls_pressed() -> void:
+func _on_controlls_pressed():
+	$Menu/Controlls.visible = true
 	$Menu/Settings.visible = false
-	print($Menu.visible)
 
-func _on_accsesibility_pressed() -> void:
+func _on_accsesability_pressed():
+	$Menu/Accsesibility.visible = true
 	$Menu/Settings.visible = false
-	print($Menu.visible)
 
-func _on_video_settings_pressed() -> void:
+func _on_video_settings_pressed():
+	$"Menu/Video settings".visible = true
 	$Menu/Settings.visible = false
-	print($Menu.visible)
 
-
-func _on_back_1_pressed() -> void:
+func _on_back_pressed():
 	$Menu/MainMenu.visible = true
 	$Menu/Settings.visible = false
-	print($Menu.visible)
+	$Menu/Controlls.visible = false
+	$Menu/Accsesibility.visible = false
+	$"Menu/Video settings".visible = false
 
-
-func _on_resume_pressed() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	GlobalVariables.menu = false
+func _on_resume_pressed():
 	$Menu.visible = false
+
+func _on_flickering_lights_pressed():
+	if(GlobalVariables.lights == false):
+		GlobalVariables.lights = true
+		print("Light On")
+	else:
+		GlobalVariables.lights = false
+		print("Light Off")
+
+func _on_fullscreen_pressed():
+	if fullscreen == true:
+		fullscreen = false
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		$"Menu/Video settings/Fullscreen".text = "Windowed"
+	else:
+		fullscreen = true
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		$"Menu/Video settings/Fullscreen".text = "Fullscreen"

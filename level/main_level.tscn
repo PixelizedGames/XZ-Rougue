@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbkaisp7240xi"]
+[gd_scene load_steps=14 format=3 uid="uid://bbkaisp7240xi"]
 
 [ext_resource type="PackedScene" uid="uid://c6krwdue54ni1" path="res://objects/clear_box.tscn" id="1_43ii6"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_evyck"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="5_o7jp2"]
 [ext_resource type="PackedScene" uid="uid://bvf87u02aedp8" path="res://objects/door.tscn" id="6_i2c4w"]
 [ext_resource type="PackedScene" uid="uid://ca5yvpl8qril5" path="res://players/enemy_guard.tscn" id="7_05d1k"]
+[ext_resource type="AudioStream" uid="uid://bshqo5ki35h5h" path="res://audio/Kevin-MacLeod-Investigations(chosic.com).mp3" id="8_wpjvl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_43ii6"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -355,3 +356,8 @@ transform = Transform3D(-0.0125834, 0, 0.999921, 0, 1, 0, -0.999921, 0, -0.01258
 
 [node name="enemy guard2" parent="." instance=ExtResource("7_05d1k")]
 transform = Transform3D(-0.0125834, 0, 0.999921, 0, 1, 0, -0.999921, 0, -0.0125834, 66.891, 2.418, 15.8375)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 21)
+stream = ExtResource("8_wpjvl")
+autoplay = true

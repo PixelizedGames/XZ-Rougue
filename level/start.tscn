@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3kumaprjm0qg"]
 
 [ext_resource type="Theme" uid="uid://b334ags7gc87d" path="res://png/buttonTheme.tres" id="1_bnhav"]
-[ext_resource type="Script" uid="uid://lq5r22r85isy" path="res://level/start.gd" id="1_x2qrw"]
+[ext_resource type="Script" uid="uid://lq5r22r85isy" path="res://scripts/start.gd" id="1_x2qrw"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_x2qrw")
