@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7sivjp3pyc4q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnfvm"]
+albedo_color = Color(0.325441, 0.325441, 0.325441, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_x36a4"]
+material = SubResource("StandardMaterial3D_nnfvm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1vyl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kllm8"]
+material = SubResource("StandardMaterial3D_f1vyl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iw8h"]
+albedo_color = Color(0.525101, 0.525101, 0.525101, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6dvcq"]
+material = SubResource("StandardMaterial3D_0iw8h")
+
+[node name="chair" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.494642, 0, 0, 0, 0.727375, 0, 0, 0, 0.493308, 0, 0, 0)
+mesh = SubResource("CylinderMesh_x36a4")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.26258, 0, 0, 0, 0.337626, 0.211653, 0, -0.440528, 0.162214, 0, -0.976119, 0.578831)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.13129, 0.38134, -0.140587, 0, 0.33788, 0.21156, 0.227401, 0.220167, -0.0811678, -0.494164, -0.976119, -0.300442)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.26258, 3.84952e-08, -1.41918e-08, 0, 0.33788, 0.21156, 2.29554e-08, 0.440333, -0.162336, 0, -0.976, -0.496217)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.13129, -0.38134, 0.140587, 0, 0.33788, 0.21156, -0.227401, 0.220167, -0.0811678, 0.48044, -0.976119, -0.277022)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.13129, -0.38134, 0.140587, 0, 0.33788, 0.21156, -0.227401, -0.220167, 0.0811677, 0.457438, -0.976118, 0.24183)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.13129, 0.38134, -0.140587, 0, 0.33788, 0.21156, 0.227401, -0.220167, 0.0811677, -0.450198, -0.976119, 0.225998)
+mesh = SubResource("CylinderMesh_kllm8")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.33299, 0, 0, 0, 0.0979743, 0, 0, 0, 1.47708, 0, 0.661702, 0.15816)
+mesh = SubResource("CylinderMesh_x36a4")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.16564, 0, 0, 0, 1.50454, 0.0326845, 0, -0.20987, 0.234313, 0, 1.26253, -0.546529)
+mesh = SubResource("BoxMesh_6dvcq")
+skeleton = NodePath("")

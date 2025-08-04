@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7ggi48ha0n71"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n4qpr"]
+albedo_color = Color(0.603922, 1, 0.890196, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tr8vr"]
+material = SubResource("StandardMaterial3D_n4qpr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inseh"]
+albedo_color = Color(0.160975, 0.083011, 0.00784868, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o6hn1"]
+material = SubResource("StandardMaterial3D_inseh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igbp1"]
+albedo_color = Color(0, 0.334051, 4.33177e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lhfae"]
+material = SubResource("StandardMaterial3D_igbp1")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tsghk"]
+height = 2.53125
+
+[node name="cactus" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.609694, 0, 0, 0, 0.327062, 0, 0, 0, 0.620791, 0, 0, 0)
+mesh = SubResource("CylinderMesh_tr8vr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.533856, 0, 0, 0, 0.200873, 0, 0, 0, 0.543167, 0, 0.132898, 0)
+mesh = SubResource("CylinderMesh_o6hn1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.196538, 0, 0, 0, 1, 0, 0, 0, 0.217851, 0, 0.303387, 0)
+mesh = SubResource("CapsuleMesh_lhfae")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.135231, 0.0710825, 0, -0.0270194, 0.355765, 0, 0, 0, 0.137212, 0.144283, 0.801424, 0)
+mesh = SubResource("CapsuleMesh_lhfae")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0161981, 0.00860849, 0.12072, -0.0266511, 0.354796, 0, -0.1324, -0.0703642, 0.0147691, -0.0428397, 1.01466, -0.126864)
+mesh = SubResource("CapsuleMesh_lhfae")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.119543, -0.144666, 0.0476921, 0.0636116, 0.391312, 1.18923e-09, -0.0792378, 0.0958905, 0.0719513, -0.0986632, 0.801424, 0.0754936)
+mesh = SubResource("CapsuleMesh_lhfae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.620479, 0, 0, 0, 0.645172, 0, 0, 0, 0.608465, 0, 0.534486, 0)
+shape = SubResource("CylinderShape3D_tsghk")

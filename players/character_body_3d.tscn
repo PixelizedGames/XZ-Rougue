@@ -542,7 +542,7 @@ stream = ExtResource("2_168h7")
 volume_db = -30.0
 
 [node name="pistol" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0596037, 0, -3.93432e-08, 0, 0.0915851, 0, 5.21072e-09, 0, -0.450033, 0.183999, 0.477142, -0.764227)
+transform = Transform3D(-0.0596037, 0, -3.93432e-08, 0, 0.0915851, 0, 5.21072e-09, 0, -0.450033, 0.183999, 0.406488, -0.764227)
 mesh = SubResource("BoxMesh_72r58")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="pistol"]
@@ -583,7 +583,7 @@ mesh = SubResource("BoxMesh_72r58")
 skeleton = NodePath("../..")
 
 [node name="spawning_pos" type="Node3D" parent="pistol"]
-transform = Transform3D(-1, 1.04907e-06, -3.82138e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, 5.24521e-06, 0.206795, 0.757351)
+transform = Transform3D(-0.999999, 1.04907e-06, -3.82139e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, -1.90735e-06, 0.206795, 12.4787)
 
 [node name="PSTimer" type="Timer" parent="."]
 wait_time = 0.5
