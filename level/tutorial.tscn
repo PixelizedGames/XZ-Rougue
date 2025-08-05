@@ -1,0 +1,127 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqk8g8tc6dks0"]
+
+[ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_kw67p"]
+[ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="2_33a3j"]
+[ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="3_33a3j"]
+[ext_resource type="PackedScene" uid="uid://bvf87u02aedp8" path="res://objects/door.tscn" id="4_ur6eb"]
+[ext_resource type="PackedScene" uid="uid://t8uke1rjq10b" path="res://objects/drink_bottle.tscn" id="5_2lob8"]
+[ext_resource type="PackedScene" uid="uid://ca5yvpl8qril5" path="res://players/enemy_guard.tscn" id="6_ysfsv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ur6eb"]
+sky_top_color = Color(0.366595, 0.366595, 0.366595, 1)
+sky_horizon_color = Color(0.54533, 0.54533, 0.54533, 1)
+ground_bottom_color = Color(0.136826, 0.136826, 0.136826, 1)
+ground_horizon_color = Color(0.54533, 0.54533, 0.54533, 1)
+
+[sub_resource type="Sky" id="Sky_2lob8"]
+sky_material = SubResource("ProceduralSkyMaterial_ur6eb")
+
+[sub_resource type="Environment" id="Environment_ysfsv"]
+sky = SubResource("Sky_2lob8")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.197264, 0.217591, 0.249547, 1)
+fog_light_energy = 0.2
+fog_density = 0.2
+fog_sky_affect = 0.735
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uyfjm"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.435294)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_avslj"]
+material = SubResource("StandardMaterial3D_uyfjm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20r8y"]
+transparency = 1
+albedo_color = Color(1, 0.933333, 0, 0.552941)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1klka"]
+material = SubResource("StandardMaterial3D_20r8y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_405hm"]
+transparency = 1
+albedo_color = Color(0.0166667, 1, 0, 0.27451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oq04h"]
+material = SubResource("StandardMaterial3D_405hm")
+
+[node name="tutorial" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ysfsv")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(41.85, 0, 0, 0, 0.3, 0, 0, 0, 33.176, -4, 0, -4)
+
+[node name="player" parent="." instance=ExtResource("2_33a3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 7)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(41.85, 0, 0, 0, 7.56, 0, 0, 0, 0.66352, -4, 4, -20)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(41.85, 0, 0, 0, 7.56, 0, 0, 0, 0.66352, -4, 4, 12)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(0.7533, 0, 0, 0, 10.059, 0, 0, 0, 33.176, 16, 3, -4)
+
+[node name="StaticBody3D5" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(0.7533, 0, 0, 0, 10.059, 0, 0, 0, 33.176, -24, 3, -4)
+
+[node name="light" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 9, 7.64346, 5)
+
+[node name="light2" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, -5, 7.64346, 5)
+
+[node name="light3" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, -17, 7.64346, 5)
+
+[node name="light4" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, 9, 7.64346, -14)
+
+[node name="light5" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, -5, 7.64346, -14)
+
+[node name="light6" parent="." instance=ExtResource("3_33a3j")]
+transform = Transform3D(0.454686, 0, 0, 0, 0.106505, 0, 0, 0, 4.16351, -17, 7.64346, -14)
+
+[node name="door" parent="." instance=ExtResource("4_ur6eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58453, 2, -6.39392)
+
+[node name="StaticBody3D6" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(0.7533, 0, 0, 0, 10.059, 0, 0, 0, 16.588, 5.58453, 3, -19.2003)
+
+[node name="StaticBody3D7" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(0.7533, 0, 0, 0, 10.059, 0, 0, 0, 16.588, 5.58453, 3, 3.94237)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.04165, 0, 0, 0, 1, 8.90942, 2.49451, -10.4428)
+text = "Doors can be opened by walking through them or shooting them."
+
+[node name="Drink_bottle" parent="." instance=ExtResource("5_2lob8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38312, 0, 0)
+
+[node name="Drink_bottle2" parent="." instance=ExtResource("5_2lob8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12018, 0, 0)
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(0.498125, 0, 0.867105, 0, 2.04165, 0, -0.867105, 0, 0.498125, 0.914063, 2.49451, -9.46191)
+text = "By pressing ESC you can see all controlls and change differnt settings."
+
+[node name="enemy guard" parent="." instance=ExtResource("6_ysfsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0877, 5.53052, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy guard"]
+transform = Transform3D(10.659, 0, 0, 0, 1.6, 0, 0, 0, 20.21, -0.164009, 3.55188, -10)
+mesh = SubResource("CylinderMesh_avslj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy guard"]
+transform = Transform3D(14.3127, 0, 0, 0, 1, 0, 0, 0, 13.968, -0.164009, 4.55188, 0)
+mesh = SubResource("CylinderMesh_1klka")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="enemy guard"]
+transform = Transform3D(37.6488, 0, 0, 0, 1.5, 0, 0, 0, 38.4384, -0.164009, 2.55188, 0)
+mesh = SubResource("CylinderMesh_oq04h")

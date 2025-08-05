@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=4 uid="uid://cqljr0cnb8ux5"]
+[gd_scene load_steps=38 format=4 uid="uid://cqljr0cnb8ux5"]
 
 [ext_resource type="Script" uid="uid://bvyi0t5o54ccw" path="res://scripts/character_body_3d.gd" id="1_ual4q"]
 [ext_resource type="AudioStream" uid="uid://bgur4m36yyqw6" path="res://audio/walking-sound-effect-272246.mp3" id="2_168h7"]
 [ext_resource type="AudioStream" uid="uid://bxvpdvp8igso3" path="res://audio/shoot-5-102360.mp3" id="3_72r58"]
 [ext_resource type="Theme" uid="uid://b334ags7gc87d" path="res://png/buttonTheme.tres" id="4_wwkfm"]
+[ext_resource type="AudioStream" uid="uid://mnhplcpk5p5l" path="res://audio/mag-reload-81594.mp3" id="5_mu68a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ual4q"]
 
@@ -928,6 +929,29 @@ offset_bottom = 573.0
 theme = ExtResource("4_wwkfm")
 text = "Fullscreen"
 
+[node name="vysinc" type="Button" parent="Menu/Video settings"]
+offset_left = 864.0
+offset_top = 408.0
+offset_right = 1018.0
+offset_bottom = 477.0
+theme = ExtResource("4_wwkfm")
+text = "Vsync/ON"
+
+[node name="Timer_R" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="HUD" type="CanvasModulate" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS"
+
+[node name="FPS_T" type="Timer" parent="."]
+
+[node name="Reload" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_mu68a")
+
 [connection signal="timeout" from="PSTimer" to="." method="_on_ps_timer_timeout"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="ITimer" to="." method="_on_timer_timeout"]
@@ -943,3 +967,6 @@ text = "Fullscreen"
 [connection signal="pressed" from="Menu/Accsesibility/Flickering_lights" to="." method="_on_flickering_lights_pressed"]
 [connection signal="pressed" from="Menu/Video settings/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Menu/Video settings/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Menu/Video settings/vysinc" to="." method="_on_vysinc_pressed"]
+[connection signal="timeout" from="Timer_R" to="." method="_on_timer_r_timeout"]
+[connection signal="timeout" from="FPS_T" to="." method="_on_fps_t_timeout"]

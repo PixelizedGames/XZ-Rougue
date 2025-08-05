@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbkaisp7240xi"]
+[gd_scene load_steps=20 format=3 uid="uid://bbkaisp7240xi"]
 
 [ext_resource type="PackedScene" uid="uid://c6krwdue54ni1" path="res://objects/clear_box.tscn" id="1_43ii6"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_evyck"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b7sivjp3pyc4q" path="res://objects/chair.tscn" id="10_j6tln"]
 [ext_resource type="PackedScene" uid="uid://cjbvnifrwxcxe" path="res://objects/bookshelf.tscn" id="11_opgus"]
 [ext_resource type="PackedScene" uid="uid://c7ggi48ha0n71" path="res://objects/cactus.tscn" id="12_pt6yp"]
+[ext_resource type="PackedScene" uid="uid://1uxte2te47w5" path="res://objects/poster.tscn" id="13_ohx83"]
+[ext_resource type="PackedScene" uid="uid://t8uke1rjq10b" path="res://objects/drink_bottle.tscn" id="14_rw325"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_43ii6"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -524,3 +526,18 @@ transform = Transform3D(-0.331833, 0, 2.90098e-08, 0, 10.5964, 0, -5.18316e-08, 
 
 [node name="cactus14" parent="objects" instance=ExtResource("12_pt6yp")]
 transform = Transform3D(-0.331833, 0, 2.90098e-08, 0, 10.5964, 0, -5.18316e-08, 0, -0.592884, -9.95775, -11.6305, -22.468)
+
+[node name="poster" parent="." instance=ExtResource("13_ohx83")]
+transform = Transform3D(1.84823, 0, 0, 0, 2.09292, 0, 0, 0, 1, 21.0383, 3.60135, 20.3637)
+
+[node name="Drink_bottle" parent="." instance=ExtResource("14_rw325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8236, 1.52111, 25.6778)
+
+[node name="Drink_bottle2" parent="." instance=ExtResource("14_rw325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81041, 3.09827, 24.6766)
+
+[node name="Drink_bottle3" parent="." instance=ExtResource("14_rw325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31149, 1.52111, -9.13034)
+
+[node name="Drink_bottle4" parent="." instance=ExtResource("14_rw325")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00702, 1.52111, -9.06978)

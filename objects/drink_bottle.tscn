@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://t8uke1rjq10b"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eoshh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eoshh"]
+albedo_color = Color(0.000240654, 0.134284, 0.499625, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jc5aq"]
+material = SubResource("StandardMaterial3D_eoshh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fko84"]
+albedo_color = Color(0.548963, 0.548963, 0.548963, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m7lly"]
+material = SubResource("StandardMaterial3D_fko84")
+
+[sub_resource type="BoxMesh" id="BoxMesh_m5a3p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0io3"]
+albedo_color = Color(0.0141099, 0.141349, 0.484628, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tmpfy"]
+material = SubResource("StandardMaterial3D_x0io3")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jc5aq"]
+
+[node name="Drink_bottle" type="RigidBody3D"]
+collision_layer = 2
+mass = 3.0
+physics_material_override = SubResource("PhysicsMaterial_eoshh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.286717, 0, 0, 0, 0.0660256, 0, 0, 0, 0.297143, 0.00179431, 0.676703, -0.00116428)
+mesh = SubResource("CylinderMesh_jc5aq")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0876507, 0, 0, 0, 0.0569223, 0, 0, 0, 0.0836852, 0.00179431, 0.753904, -0.00116428)
+mesh = SubResource("CylinderMesh_m7lly")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0876507, 0, 0, 0, 0.0273933, 0, 0, 0, 0.0243207, 0.0480017, 0.742097, -0.0316131)
+mesh = SubResource("BoxMesh_m5a3p")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0876507, 0, 0, 0, 0.0273933, 0, 0, 0, 0.0243207, -0.0393642, 0.742097, 0.0258391)
+mesh = SubResource("BoxMesh_m5a3p")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.286717, 0, 0, 0, 0.319966, 0, 0, 0, 0.297143, 0.00179431, 0.334451, -0.00116428)
+mesh = SubResource("CapsuleMesh_tmpfy")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.286717, 0, 0, 0, 0.081177, 0, 0, 0, 0.297143, 0.00179431, 0.660185, -0.00116428)
+mesh = SubResource("CapsuleMesh_tmpfy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.286717, 0, 0, 0, 0.319966, 0, 0, 0, 0.297143, 0.00179431, 0.420659, -0.00116428)
+shape = SubResource("CylinderShape3D_jc5aq")

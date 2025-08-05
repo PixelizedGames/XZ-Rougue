@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://1uxte2te47w5"]
+
+[ext_resource type="Texture2D" uid="uid://cyb7m2hhfuivw" path="res://png/New Piskel (2).png" id="1_nquqb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shbj2"]
+albedo_texture = ExtResource("1_nquqb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gbsu4"]
+material = SubResource("StandardMaterial3D_shbj2")
+
+[node name="poster" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_gbsu4")

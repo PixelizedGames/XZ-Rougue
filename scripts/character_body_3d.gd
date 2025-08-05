@@ -9,6 +9,9 @@ var hack_s = 1
 var health = 100
 var imunity = false
 var fullscreen = true
+var vsync = true
+var bullets = 8
+var FPS = 0
 const JUMP_VELOCITY = 5.0
 const MAX_LOOK_ANGLE = 90.0
 const MIN_LOOK_ANGLE = -90.0
@@ -16,23 +19,36 @@ const MIN_LOOK_ANGLE = -90.0
 @onready var bullet_scene = preload("res://objects/p_bullet.tscn")
 @onready var PSTimer = $PSTimer
 @onready var Imunity_timer = $ITimer
+@onready var R_Timer = $Timer_R
+@onready var FPS_Timer = $FPS_T
 @onready var animation = $enemy_godot/AnimationPlayer
 
+
 func _ready() -> void:
+	$HUD.visible = true
 	$Menu.visible = false
 	$Menu/MainMenu.visible = false
 	$Menu/Settings.visible = false
 	$Menu/Controlls.visible = false
 	$Menu/Accsesibility.visible = false
 	$"Menu/Video settings".visible = false
+	FPS_Timer.start()
+func _process(delta):
+	FPS += 1
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("Reload"):
+		bullets = 0
+		R_Timer.start()
+		$Reload.play()
+		
 	if $Menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		GlobalVariables.menu = true
+		$HUD.visible = false
 	if $Menu.visible == false:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		GlobalVariables.menu = false
-		
+		$HUD.visible = true
 	MOUSE_SENSITIVITY = ($"Menu/Accsesibility/Mouse slider".value / 1000)
 	if Input.is_action_pressed("hack"):
 		hack_g = 0.1
@@ -94,15 +110,6 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		get_tree().change_scene_to_file("res://level/start.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and GlobalVariables.menu == false:
-		rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENSITIVITY))
-		vertical_look_angle = clamp(vertical_look_angle - event.relative.y * MOUSE_SENSITIVITY, MIN_LOOK_ANGLE, MAX_LOOK_ANGLE)
-		$Camera3D.rotation_degrees.x = vertical_look_angle
-		$pistol.rotation_degrees.x = -vertical_look_angle
-
-func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and GlobalVariables.menu == false:
 		$Menu.visible = true
 		$Menu/MainMenu.visible = true
@@ -111,24 +118,33 @@ func _process(delta: float) -> void:
 		$Menu/Controlls.visible = false
 		$Menu/Accsesibility.visible = false
 		$"Menu/Video settings".visible = false
-		
-		
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and GlobalVariables.menu == false:
+		rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENSITIVITY))
+		vertical_look_angle = clamp(vertical_look_angle - event.relative.y * MOUSE_SENSITIVITY, MIN_LOOK_ANGLE, MAX_LOOK_ANGLE)
+		$Camera3D.rotation_degrees.x = vertical_look_angle
+		$pistol.rotation_degrees.x = -vertical_look_angle
+
 
 func _spawn_bullet():
-	if PSReady == true and GlobalVariables.menu == false:
-		PSReady = false
-		PSTimer.start()
-		var instance = bullet_scene.instantiate()
-		instance.global_transform = $pistol/spawning_pos.global_transform
-		get_parent().add_child(instance)
-		$gun_shot.play()
-		GlobalVariables.shot_audio = true
+	if PSReady == true and GlobalVariables.menu == false and bullets >= 0:
+			bullets -= 1
+			PSReady = false
+			PSTimer.start()
+			var instance = bullet_scene.instantiate()
+			instance.global_transform = $pistol/spawning_pos.global_transform
+			get_parent().add_child(instance)
+			$gun_shot.play()
+			GlobalVariables.shot_audio = true
 
 
 func _on_ps_timer_timeout():
 	PSReady = true
 	GlobalVariables.shot_audio = false
-
+func _on_fps_t_timeout():
+	$HUD/Label.text = str(FPS)
+	FPS = 0
+	FPS_Timer.start()
 
 func _on_area_3d_body_entered(body) :
 	if body is ebullet and imunity == false and GlobalVariables.menu == false:
@@ -139,7 +155,9 @@ func _on_area_3d_body_entered(body) :
 
 func _on_timer_timeout() -> void:
 	imunity = false
-	
+func _on_timer_r_timeout():
+	bullets = 8
+
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://level/start.tscn")
 
@@ -187,3 +205,14 @@ func _on_fullscreen_pressed():
 		fullscreen = true
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		$"Menu/Video settings/Fullscreen".text = "Fullscreen"
+
+
+func _on_vysinc_pressed():
+	if vsync == true:
+		vsync = false
+		DisplayServer.VSYNC_DISABLED
+		$"Menu/Video settings/vysinc".text = "Vsync/OFF"
+	else:
+		vsync = true
+		DisplayServer.VSYNC_ENABLED
+		$"Menu/Video settings/vysinc".text = "Vsync/ON"
