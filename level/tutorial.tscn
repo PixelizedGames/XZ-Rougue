@@ -105,23 +105,35 @@ text = "Doors can be opened by walking through them or shooting them."
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38312, 0, 0)
 
 [node name="Drink_bottle2" parent="." instance=ExtResource("5_2lob8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12018, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3279, 0, 0)
 
 [node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(0.498125, 0, 0.867105, 0, 2.04165, 0, -0.867105, 0, 0.498125, 0.914063, 2.49451, -9.46191)
+transform = Transform3D(0.850242, 0, 0.526391, 0, 2.04165, 0, -0.526391, 0, 0.850242, 8.44059, 2.49451, 3.6476)
 text = "By pressing ESC you can see all controlls and change differnt settings."
 
 [node name="enemy guard" parent="." instance=ExtResource("6_ysfsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0877, 5.53052, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="enemy guard"]
-transform = Transform3D(10.659, 0, 0, 0, 1.6, 0, 0, 0, 20.21, -0.164009, 3.55188, -10)
+transform = Transform3D(10.659, 0, 0, 0, 1.6, 0, 0, 0, 20.21, -0.164009, -1.19746, -10)
 mesh = SubResource("CylinderMesh_avslj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy guard"]
-transform = Transform3D(14.3127, 0, 0, 0, 1, 0, 0, 0, 13.968, -0.164009, 4.55188, 0)
+transform = Transform3D(14.3127, 0, 0, 0, 1, 0, 0, 0, 13.968, -0.164009, -0.197464, 0)
 mesh = SubResource("CylinderMesh_1klka")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="enemy guard"]
-transform = Transform3D(37.6488, 0, 0, 0, 1.5, 0, 0, 0, 38.4384, -0.164009, 2.55188, 0)
+transform = Transform3D(37.6488, 0, 0, 0, 1.5, 0, 0, 0, 38.4384, -0.164009, -2.19746, 0)
 mesh = SubResource("CylinderMesh_oq04h")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(0.917456, 0, -0.397837, 0, 2.04165, 0, 0.397837, 0, 0.917456, 12.0606, 2.49451, -4.76672)
+text = "The green represents the zone that enemys can hear you when you walking or shooting.
+The orange represents the zone that enemys can hear you when you are crouch walking.
+And the red represents the zone that enemys can see."
+
+[node name="Drink_bottle3" parent="." instance=ExtResource("5_2lob8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38312, 0, -4.80041)
+
+[node name="Drink_bottle4" parent="." instance=ExtResource("5_2lob8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3279, 0, -4.80041)
