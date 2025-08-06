@@ -534,7 +534,7 @@ script = ExtResource("1_vktuh")
 wait_time = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.398265, 0)
+transform = Transform3D(0.596305, 0, 0, 0, 0.828641, 0, 0, 0, 0.241735, 0, -0.398265, 0)
 shape = SubResource("CapsuleShape3D_x3j3m")
 
 [node name="Enemy_hitbox" type="Area3D" parent="."]
