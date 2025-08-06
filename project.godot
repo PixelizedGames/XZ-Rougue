@@ -94,3 +94,4 @@ Reload={
 
 textures/canvas_textures/default_texture_filter=0
 textures/default_filters/texture_mipmap_bias=-0.015
+occlusion_culling/use_occlusion_culling=true

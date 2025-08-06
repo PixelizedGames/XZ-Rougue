@@ -1,7 +1,15 @@
-[gd_scene load_steps=84 format=3 uid="uid://brb37rjo3jp2o"]
+[gd_scene load_steps=86 format=3 uid="uid://brb37rjo3jp2o"]
 
-[ext_resource type="Script" uid="uid://c7856ost53ygo" path="res://level/start_scene.gd" id="1_4epvg"]
+[ext_resource type="Script" uid="uid://c7856ost53ygo" path="res://scripts/start_scene.gd" id="1_4epvg"]
 [ext_resource type="Texture2D" uid="uid://d23jd7vvw0ay2" path="res://png/New Piskel (9).png" id="1_fmcqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xvfm"]
+atlas = ExtResource("1_fmcqm")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81163"]
+atlas = ExtResource("1_fmcqm")
+region = Rect2(3840, 11880, 1920, 1080)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4epvg"]
 atlas = ExtResource("1_fmcqm")
@@ -327,6 +335,22 @@ region = Rect2(3840, 11880, 1920, 1080)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3xvfm")
+}],
+"loop": true,
+"name": &"begin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81163")
+}],
+"loop": false,
+"name": &"end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4epvg")
 }, {
 "duration": 1.0,
@@ -568,7 +592,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"movie",
-"speed": 11.0
+"speed": 12.0
 }]
 
 [node name="Start scene" type="Node2D"]
@@ -578,8 +602,6 @@ script = ExtResource("1_4epvg")
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_yy86l")
 animation = &"movie"
-frame = 79
-frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 697.0
@@ -588,12 +610,3 @@ offset_right = 1306.0
 offset_bottom = 243.0
 text = "                                                                Disclaimer
 Game contains flashing lights pease turn off in settings when you start playing."
-
-[node name="Timer_1" type="Timer" parent="."]
-wait_time = 2.0
-
-[node name="Timer_2" type="Timer" parent="."]
-wait_time = 7.54
-
-[connection signal="timeout" from="Timer_1" to="." method="_on_timer_1_timeout"]
-[connection signal="timeout" from="Timer_2" to="." method="_on_timer_2_timeout"]

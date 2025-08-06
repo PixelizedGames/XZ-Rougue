@@ -108,7 +108,7 @@ func _physics_process(delta: float) -> void:
 	if GlobalVariables.menu == false:
 		move_and_slide()
 	if health <= 0:
-		get_tree().change_scene_to_file("res://level/start.tscn")
+		get_tree().change_scene_to_file("res://level/death_scene.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("esc") and GlobalVariables.menu == false:
 		$Menu.visible = true

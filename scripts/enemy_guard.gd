@@ -59,13 +59,6 @@ func _physics_process(delta):
 	else:
 		targetable = false
 
-
-func _on_enemy_body_entered(body):
-	if body is PBullet and imunity == false and GlobalVariables.menu == false:
-		look_at(player.global_transform.origin, Vector3.UP)
-		timer.start()
-		health -= 3
-
 func _on_timer_timeout():
 	imunity = false
 	
@@ -115,3 +108,10 @@ func _on_enemy__head_hitbox_2_body_entered(body: Node3D) -> void:
 		look_at(player.global_transform.origin, Vector3.UP)
 		timer.start()
 		health -= 10
+
+
+func _on_enemy_hitbox_body_entered(body: Node3D) -> void:
+	if body is PBullet and imunity == false and GlobalVariables.menu == false:
+		look_at(player.global_transform.origin, Vector3.UP)
+		timer.start()
+		health -= 3

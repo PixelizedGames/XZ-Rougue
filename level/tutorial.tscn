@@ -137,3 +137,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38312, 0, -4.80041)
 
 [node name="Drink_bottle4" parent="." instance=ExtResource("5_2lob8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3279, 0, -4.80041)
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(0.484703, 0, 0.874678, 0, 2.04165, 0, -0.874678, 0, 0.484703, 2.73503, 2.49451, -8.14412)
+text = "Be careful if you get shot by the enemy you will take damage."
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(0.110984, 0, 0.993822, 0, 2.04165, 0, -0.993822, 0, 0.110984, -22.9756, 2.49451, -4.76672)
+text = "Please go into settings and press exit so you can play the main game."

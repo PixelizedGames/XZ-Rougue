@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://baornnwev54qh"]
+[gd_scene load_steps=4 format=3 uid="uid://baornnwev54qh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ay8i8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et42k"]
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_ay8i8"]
 
 [node name="StaticBody3D" type="StaticBody3D"]
 
@@ -16,3 +18,6 @@ shape = SubResource("BoxShape3D_et42k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_et42k")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = SubResource("BoxOccluder3D_ay8i8")
