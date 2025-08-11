@@ -99,7 +99,8 @@ transform = Transform3D(0.7533, 0, 0, 0, 10.059, 0, 0, 0, 16.588, 5.58453, 3, 3.
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.04165, 0, 0, 0, 1, 8.90942, 2.49451, -10.4428)
-text = "Doors can be opened by walking through them or shooting them."
+text = "Doors can be opened by walking through them or shooting them. 
+Enemys take more damage if you shoot them in the head."
 
 [node name="Drink_bottle" parent="." instance=ExtResource("5_2lob8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38312, 0, 0)
@@ -127,8 +128,8 @@ transform = Transform3D(37.6488, 0, 0, 0, 1.5, 0, 0, 0, 38.4384, -0.164009, -2.1
 mesh = SubResource("CylinderMesh_oq04h")
 
 [node name="Label3D3" type="Label3D" parent="."]
-transform = Transform3D(0.917456, 0, -0.397837, 0, 2.04165, 0, 0.397837, 0, 0.917456, 12.0606, 2.49451, -4.76672)
-text = "The green represents the zone that enemys can hear you when you walking or shooting.
+transform = Transform3D(0.917456, 0, -0.397837, 0, 2.04165, 0, 0.397837, 0, 0.917456, 11.8428, 2.49451, -4.76672)
+text = "The green around the enemyrepresents the zone that enemys can hear you when you walking or shooting.
 The orange represents the zone that enemys can hear you when you are crouch walking.
 And the red represents the zone that enemys can see."
 
@@ -145,3 +146,6 @@ text = "Be careful if you get shot by the enemy you will take damage."
 [node name="Label3D5" type="Label3D" parent="."]
 transform = Transform3D(0.110984, 0, 0.993822, 0, 2.04165, 0, -0.993822, 0, 0.110984, -22.9756, 2.49451, -4.76672)
 text = "Please go into settings and press exit so you can play the main game."
+
+[node name="StaticBody3D8" parent="." instance=ExtResource("1_kw67p")]
+transform = Transform3D(41.85, 0, 0, 0, 0.768958, 0, 0, 0, 44.8267, -4.147, 8.14002, -2.53505)
