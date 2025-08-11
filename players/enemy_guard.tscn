@@ -604,6 +604,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(-3.3555, 1.46674e-06, -1.28226e-14, 0, -4.77276e-07, -2.18376, -3.88517e-08, -2.22206, 1.94259e-08, 0.0304174, 0.13336, 0.508605)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125038, 0, -0.00423384)
 stream = ExtResource("2_dltxv")
 autoplay = true
 max_distance = 60.0
@@ -804,6 +805,10 @@ stream = ExtResource("2_dltxv")
 volume_db = -30.0
 max_distance = 60.0
 parameters/looping = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.260449, 0, 0, 0, 0.0141112, 0, 0, 0, 0.241735, 0.190024, 0.0991336, -0.857984)
+shape = SubResource("CapsuleShape3D_x3j3m")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]

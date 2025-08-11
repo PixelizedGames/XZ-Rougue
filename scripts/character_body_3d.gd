@@ -36,6 +36,7 @@ func _ready() -> void:
 func _process(delta):
 	FPS += 1
 func _physics_process(delta: float) -> void:
+	$HUD/Health.text = str(health)
 	if Input.is_action_pressed("Reload"):
 		bullets = 0
 		R_Timer.start()
@@ -142,7 +143,7 @@ func _on_ps_timer_timeout():
 	PSReady = true
 	GlobalVariables.shot_audio = false
 func _on_fps_t_timeout():
-	$HUD/Label.text = str(FPS)
+	$HUD/FPS.text = str(FPS)
 	FPS = 0
 	FPS_Timer.start()
 

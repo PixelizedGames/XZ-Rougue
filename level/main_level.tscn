@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbkaisp7240xi"]
+[gd_scene load_steps=22 format=3 uid="uid://bbkaisp7240xi"]
 
 [ext_resource type="PackedScene" uid="uid://c6krwdue54ni1" path="res://objects/clear_box.tscn" id="1_43ii6"]
 [ext_resource type="PackedScene" uid="uid://baornnwev54qh" path="res://objects/box.tscn" id="1_evyck"]
+[ext_resource type="Script" uid="uid://kgs5pg7d8jrx" path="res://scripts/main_level.gd" id="1_ftnrv"]
 [ext_resource type="PackedScene" uid="uid://cqljr0cnb8ux5" path="res://players/character_body_3d.tscn" id="2_54fhk"]
 [ext_resource type="PackedScene" uid="uid://y4rdy12ev7tw" path="res://objects/pink_sheep.tscn" id="3_54fhk"]
 [ext_resource type="PackedScene" uid="uid://dc6sj7fcr1yk6" path="res://objects/light.tscn" id="5_o7jp2"]
@@ -30,14 +31,19 @@ sky = SubResource("Sky_o7jp2")
 tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.0820511, 0.093329, 0.111059, 1)
-fog_density = 0.0846
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 17.0
+fog_density = 0.2652
 
 [sub_resource type="BoxMesh" id="BoxMesh_ay8i8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et42k"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rw325"]
+size = Vector3(1, 0.460938, 1)
+
 [node name="Main game" type="Node3D"]
+script = ExtResource("1_ftnrv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i2c4w")
@@ -366,6 +372,21 @@ transform = Transform3D(0.0095616, 0, 0, 0, 22.2403, 0, 0, 0, 0.00424861, 0.3010
 [node name="StaticBody3D102" parent="walls" instance=ExtResource("1_evyck")]
 transform = Transform3D(0.00671818, 0, 0, 0, 22.2403, 0, 0, 0, 0.00424861, 0.339339, 9.23355, -0.395142)
 
+[node name="StaticBody3D103" parent="walls" instance=ExtResource("1_evyck")]
+transform = Transform3D(0.00374623, 0, 0, 0, 42.8775, 0, 0, 0, 0.1769, -0.0624834, 18.9438, -0.361495)
+
+[node name="StaticBody3D104" parent="walls" instance=ExtResource("1_evyck")]
+transform = Transform3D(0.143881, 0, 0, 0, 42.8775, 0, 0, 0, 0.00424861, -0.37363, 18.9438, 0.411492)
+
+[node name="StaticBody3D105" parent="walls" instance=ExtResource("1_evyck")]
+transform = Transform3D(0.199131, 0, 0, 0, 42.8775, 0, 0, 0, 0.00424861, -0.162274, 18.9438, 0.411492)
+
+[node name="StaticBody3D106" parent="walls" instance=ExtResource("1_evyck")]
+transform = Transform3D(0.062013, 0, 0, 0, 22.2403, 0, 0, 0, 0.00424861, -0.285284, 29.0329, 0.411566)
+
+[node name="StaticBody3D107" parent="walls" instance=ExtResource("1_evyck")]
+transform = Transform3D(0.771951, 0, 0, 0, 0.855902, 0, 0, 0, 1.15549, 0, 40.5958, -0.0283105)
+
 [node name="player" parent="." instance=ExtResource("2_54fhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 1, 75)
 
@@ -628,6 +649,238 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.254, 0, -11.702)
 skeleton = NodePath("../..")
 
+[node name="light23" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light67" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light68" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light69" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light70" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light71" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light72" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light73" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light74" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light75" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light76" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light77" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light78" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light79" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light80" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light81" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light82" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light83" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light84" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light85" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light86" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light87" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light88" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light89" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light90" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light91" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light92" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light93" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light94" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light95" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light96" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light97" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light98" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light99" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light100" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light101" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light102" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71318, 0, -19.1158)
+skeleton = NodePath("../..")
+
+[node name="light103" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71321, 0, -22.4218)
+skeleton = NodePath("../..")
+
+[node name="light104" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7132, 0, -25.633)
+skeleton = NodePath("../..")
+
+[node name="light105" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7132, 0, -28.7537)
+skeleton = NodePath("../..")
+
+[node name="light106" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.057, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light107" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.058, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light108" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.057, 0, -15.209)
+skeleton = NodePath("../..")
+
+[node name="light109" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light110" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light111" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -15.209)
+skeleton = NodePath("../..")
+
+[node name="light112" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light113" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light114" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -15.209)
+skeleton = NodePath("../..")
+
+[node name="light115" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light116" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light117" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -15.209)
+skeleton = NodePath("../..")
+
+[node name="light118" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light119" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light120" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -15.209)
+skeleton = NodePath("../..")
+
+[node name="light121" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -8.87704)
+skeleton = NodePath("../..")
+
+[node name="light122" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -12.0882)
+skeleton = NodePath("../..")
+
+[node name="light123" parent="lights" instance=ExtResource("5_o7jp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -15.209)
+skeleton = NodePath("../..")
+
 [node name="doors" parent="." instance=ExtResource("6_i2c4w")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.52775, 2.15354, -1.58318)
 
@@ -717,6 +970,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2616, 0, -56.7818)
 
 [node name="door30" parent="doors" instance=ExtResource("6_i2c4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2616, 0, -63.6394)
+
+[node name="door31" parent="doors" instance=ExtResource("6_i2c4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.5154, 0, 42.4649)
 
 [node name="enemy guards" parent="." instance=ExtResource("7_05d1k")]
 transform = Transform3D(-0.0125834, 0, 0.999921, 0, 1, 0, -0.999921, 0, -0.0125834, 28.2673, 2.418, 1.30931)
@@ -982,3 +1238,86 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31149, 1.52111, -9.13034)
 
 [node name="Drink_bottle4" parent="." instance=ExtResource("14_rw325")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00702, 1.52111, -9.06978)
+
+[node name="enemy guard3" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(-0.999992, 0, -0.00399664, 0, 1, 0, 0.00399664, 0, -0.999992, 33.6973, 2.418, 50.2804)
+
+[node name="enemy guard4" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(-0.999992, 0, -0.00399664, 0, 1, 0, 0.00399664, 0, -0.999992, -9.28677, 2.418, 48.3792)
+
+[node name="enemy guard5" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.0051834, 0, -0.999987, 0, 1, 0, 0.999987, 0, 0.0051834, 32.0848, 2.418, -13.4955)
+
+[node name="enemy guard6" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.0051834, 0, -0.999987, 0, 1, 0, 0.999987, 0, 0.0051834, 32.7406, 2.418, -28.187)
+
+[node name="enemy guard7" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.0051834, 0, -0.999987, 0, 1, 0, 0.999987, 0, 0.0051834, 32.4783, 2.418, -43.6655)
+
+[node name="enemy guard8" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.0051834, 0, -0.999987, 0, 1, 0, 0.999987, 0, 0.0051834, 32.0848, 2.418, -58.8817)
+
+[node name="enemy guard9" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.0051834, 0, -0.999987, 0, 1, 0, 0.999987, 0, 0.0051834, 32.5704, 2.418, -74.1939)
+
+[node name="enemy guard10" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, -0.549714, 2.418, -30.7895)
+
+[node name="enemy guard11" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, 18.0704, 2.418, -30.7895)
+
+[node name="enemy guard12" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, 62.7852, 2.418, -3.2753)
+
+[node name="enemy guard13" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, 62.4103, 2.418, -30.0985)
+
+[node name="enemy guard14" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, 62.8692, 2.418, -68.3981)
+
+[node name="enemy guard15" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(1, 0, 0.000418671, 0, 1, 0, -0.000418671, 0, 1, 9.06473, 2.418, -60.7094)
+
+[node name="enemy guard16" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, -56.4474)
+
+[node name="enemy guard17" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, -56.4474)
+
+[node name="enemy guard18" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, -39.7373)
+
+[node name="enemy guard19" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, -39.7373)
+
+[node name="enemy guard20" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, -19.94)
+
+[node name="enemy guard21" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, -19.94)
+
+[node name="enemy guard22" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, 11.1764)
+
+[node name="enemy guard23" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, 11.1764)
+
+[node name="enemy guard24" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, 27.8865)
+
+[node name="enemy guard25" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, 27.8865)
+
+[node name="enemy guard26" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -57.9526, 2.418, 47.6838)
+
+[node name="enemy guard27" parent="." instance=ExtResource("7_05d1k")]
+transform = Transform3D(0.00198945, 0, -0.999998, 0, 1, 0, 0.999998, 0, 0.00198945, -34.5927, 2.418, 47.6838)
+
+[node name="end_area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="end_area"]
+transform = Transform3D(26.8455, 0, 0, 0, 22.634, 0, 0, 0, 1, -48.4411, 5.36285, 64.454)
+shape = SubResource("BoxShape3D_rw325")
+
+[connection signal="body_entered" from="end_area" to="." method="_on_end_area_body_entered"]

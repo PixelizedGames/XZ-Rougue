@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbpfefilxjpcs"]
+
+[ext_resource type="Script" uid="uid://n7xm57qg8xmh" path="res://scripts/starwars_lable.gd" id="1_k7uum"]
+
+[node name="Star wars label" type="Node2D"]
+script = ExtResource("1_k7uum")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 1216.0
+offset_right = 1424.0
+offset_bottom = 2279.0
+text = "XZ Rogue
+Created by William Furniss/PixelizedGames
+
+Lead & Only Developer
+
+Game Design
+
+Programming
+
+3D Modelling
+
+Animation
+
+Sound Design
+
+Visual Effects
+
+UI & UX Design
+
+Special Thanks
+To everyone who plays, supports, or shares this game—
+You are the reason this journey was worth it.
+
+About the Game
+Every single line of code, every polygon, every texture,
+every sound, and every animation was created from scratch.
+No team. No shortcuts. Just passion, persistence, and a love for games.
+
+Developer’s Note
+Making XZ Rogue has been an incredible adventure.
+It has tested my skills, my patience, and my imagination.
+From the very first concept sketch to the last bug fix,
+this project has been a labor of love.
+
+Thank You for Playing
+By playing this game, you’ve become part of its story.
+Your time and attention mean more than you know.
+
+See You in the Next Game
+Until then—
+Stay curious, stay creative, and keep exploring."
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.42
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

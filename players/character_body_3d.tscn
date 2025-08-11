@@ -942,10 +942,17 @@ wait_time = 2.5
 
 [node name="HUD" type="CanvasModulate" parent="."]
 
-[node name="Label" type="Label" parent="HUD"]
-offset_right = 40.0
+[node name="FPS" type="Label" parent="HUD"]
+offset_left = 8.0
+offset_right = 48.0
 offset_bottom = 23.0
 text = "FPS"
+
+[node name="Health" type="Label" parent="HUD"]
+offset_left = 1864.0
+offset_right = 1916.0
+offset_bottom = 23.0
+text = "Health"
 
 [node name="FPS_T" type="Timer" parent="."]
 
