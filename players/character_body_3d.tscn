@@ -842,7 +842,6 @@ theme = ExtResource("4_wwkfm")
 text = "Back"
 
 [node name="Controlls" type="Node2D" parent="Menu"]
-visible = false
 
 [node name="back" type="Button" parent="Menu/Controlls"]
 offset_left = 864.0
@@ -872,7 +871,8 @@ D - move right
 LMB - shoot
 RMB - aim
 CTRL - crouch
-Space - jump"
+Space - jump
+R - Reload"
 
 [node name="Accsesibility" type="Node2D" parent="Menu"]
 visible = false
