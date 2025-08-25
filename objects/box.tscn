@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://baornnwev54qh"]
+[gd_scene load_steps=5 format=3 uid="uid://baornnwev54qh"]
+
+[ext_resource type="Script" uid="uid://b177y1nqxgpn3" path="res://scripts/box.gd" id="1_et42k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ay8i8"]
 
@@ -14,9 +16,10 @@ mesh = SubResource("BoxMesh_ay8i8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_et42k")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="box area" type="Area3D" parent="."]
+script = ExtResource("1_et42k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box area"]
 shape = SubResource("BoxShape3D_et42k")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]

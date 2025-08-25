@@ -7,7 +7,7 @@ var inrange = false
 var audio_range1 = false
 var audio_range2 = false
 var targetable = false
-var SPEED = 2
+var SPEED = 1
 const JUMP_VELOCITY = 4.5
 @onready var timer = $Timer
 @onready var delay_timer = $shoot_delay
@@ -18,7 +18,7 @@ const JUMP_VELOCITY = 4.5
 @onready var animation = $enemy_godot/AnimationPlayer
 
 func _ready() -> void:
-	SPEED = 2
+	SPEED = 1
 	animation.play("walking")
 	audio.start()
 func _physics_process(delta):
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		
 	if targetable == true or inrange == true and GlobalVariables.menu == false:
 		look_at(player.global_transform.origin, Vector3.UP)
-		SPEED = 5
+		SPEED = 2.5
 		animation.play("running")
 		animation.speed_scale = 9
 		$AudioStreamPlayer3D.play()

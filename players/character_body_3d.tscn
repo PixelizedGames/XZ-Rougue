@@ -587,7 +587,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.999999, 1.04907e-06, -3.82139e-15, 0, -5.24537e-07, -1, -8.74228e-08, -12, 4.37114e-08, -1.90735e-06, 0.206795, 12.4787)
 
 [node name="PSTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.35
 
 [node name="hitbox" type="Area3D" parent="."]
 transform = Transform3D(1.22526, 0, 0, 0, 1.12866, 0, 0, 0, 1.23499, 0, 0, 0)
