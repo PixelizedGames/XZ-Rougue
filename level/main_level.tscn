@@ -392,493 +392,616 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 1, 75)
 
 [node name="lights" parent="." instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-1.9875e-08, 0, 4.16351, 0, 0.106505, 0, -0.454686, 0, -1.81993e-07, 59, 10.5, 69)
+visible = false
 
 [node name="light2" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3918, 0, 0)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light3" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79727, 0, -4.32328)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light4" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1891, 0, -4.32328)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light5" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59796, 0, -9.84746)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light6" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.9898, 0, -9.84746)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light7" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.1789, 0, -3.60273)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light8" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5708, 0, -3.60273)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light9" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.3714, 0, -12.9698)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light10" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.3714, 0, -9.12691)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light11" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 13.1959, 0, -15.6118)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light12" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 13.1959, 0, -13.4502)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light13" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7803, 0, -8.88673)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light14" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7803, 0, -12.4895)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light15" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.75, 0, -14.1707)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light16" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.75, 0, -15.852)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light17" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.75, 0, -10.5592)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light18" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.75, 0, -12.3864)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light19" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.75, 0, -8.27645)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light20" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1721, 0, -15.6118)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light21" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.564, 0, -15.6118)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light22" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7803, 0, -15.6118)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light25" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 125.361, 0, -13.4502)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light26" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 125.361, 0, -11.2886)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light27" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 125.361, 0, -9.3671)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light28" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5776, 0, 1.20091)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light29" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.9694, 0, 1.20091)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light30" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 113.974, 0, -0.960727)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light31" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 113.974, 0, -4.56346)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light24" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.684, 0, -6.04935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light32" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.684, 0, -4.09206)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light33" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.684, 0, -2.18496)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light34" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.684, 0, -0.56643)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light35" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.738, 0, -6.04935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light36" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.738, 0, -4.09206)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light37" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.738, 0, -2.18496)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light38" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.738, 0, -0.56643)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light39" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.678, 0, -6.04935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light40" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.678, 0, -4.09206)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light41" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.678, 0, -2.18496)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light42" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.678, 0, -0.56643)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light43" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.344, 0, -6.04935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light44" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.344, 0, -4.09206)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light45" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.344, 0, -2.18496)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light46" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.344, 0, -0.566429)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light47" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.226, 0, -6.04935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light48" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.226, 0, -4.09206)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light49" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.226, 0, -2.18496)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light50" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 293.226, 0, -0.566429)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light51" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 132.318, 0, -6.98661)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light52" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 132.318, 0, -4.58924)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light53" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 132.318, 0, -2.41135)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light54" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 132.318, 0, -0.19969)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light55" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 151.178, 0, 0.863934)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light56" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 182.915, 0, 0.863934)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light57" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 216.261, 0, 0.863934)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light58" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 249.637, 0, 0.863934)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light59" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 281.344, 0, 0.863935)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light60" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(-4.37114e-08, 0, -9.15689, 0, 1, 0, 0.109207, 0, -4.37114e-08, 308.843, 0, 2.36725)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light61" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 280.714, 0, -3.20302)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light62" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248.577, 0, -3.20302)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light63" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.878, 0, -3.20302)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light64" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.869, 0, -3.20302)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light65" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.285, 0, -3.20302)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light66" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.254, 0, -11.702)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light23" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light67" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light68" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light69" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.163, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light70" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light71" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light72" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light73" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 274.297, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light74" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light75" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light76" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light77" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.66, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light78" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light79" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light80" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light81" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.794, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light82" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light83" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light84" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light85" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.703, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light86" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light87" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light88" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light89" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.837, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light90" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light91" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light92" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light93" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.2, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light94" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light95" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light96" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light97" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3338, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light98" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light99" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light100" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light101" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5513, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light102" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71318, 0, -19.1158)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light103" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71321, 0, -22.4218)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light104" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7132, 0, -25.633)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light105" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7132, 0, -28.7537)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light106" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.057, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light107" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.058, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light108" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.057, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light109" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light110" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light111" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.77, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light112" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light113" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light114" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 239.793, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light115" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light116" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light117" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.397, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light118" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light119" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light120" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.543, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light121" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -8.87704)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light122" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -12.0882)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="light123" parent="lights" instance=ExtResource("5_o7jp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 307.337, 0, -15.209)
+visible = false
 skeleton = NodePath("../..")
 
 [node name="doors" parent="." instance=ExtResource("6_i2c4w")]

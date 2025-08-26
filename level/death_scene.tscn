@@ -362,6 +362,7 @@ animations = [{
 }]
 
 [node name="death_scene" type="Node2D"]
+scale = Vector2(1.00006, 1.00017)
 script = ExtResource("1_4i8iu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

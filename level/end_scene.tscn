@@ -481,12 +481,13 @@ animations = [{
 }]
 
 [node name="End_scene" type="Node2D"]
+scale = Vector2(1, 1.00001)
 script = ExtResource("1_78c81")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(1143.75, 759.75)
-scale = Vector2(2288.5, 1520.5)
+position = Vector2(959.75, 539.75)
+scale = Vector2(1920.5, 1080.5)
 mesh = SubResource("QuadMesh_y2tka")
 
 [node name="Star wars label" parent="." instance=ExtResource("2_y2tka")]

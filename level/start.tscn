@@ -5,10 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cxumqscikkrkb" path="res://png/New Piskel (1).png" id="2_oni8m"]
 
 [node name="Start" type="Node2D"]
+scale = Vector2(0.999999, 1.00373)
 script = ExtResource("1_x2qrw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 536)
+position = Vector2(960, 538)
+scale = Vector2(1, 0.996296)
 texture = ExtResource("2_oni8m")
 
 [node name="Play" type="Button" parent="."]
