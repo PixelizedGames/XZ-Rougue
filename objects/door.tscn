@@ -64,6 +64,14 @@ mesh = SubResource("BoxMesh_j7xx1")
 transform = Transform3D(0.424857, 0, 0, 0, 4.58647, 0, 0, 0, 2.0257, 0, 0.248263, -3.96446)
 mesh = SubResource("BoxMesh_j7xx1")
 
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.136155, 0, 0, 0, 3.42016, 0, 0, 0, 2.00832, 0.00326737, 0.273064, 1.28258)
+shape = SubResource("BoxShape3D_j7xx1")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.136155, 0, 0, 0, 3.42016, 0, 0, 0, 2.00832, 0.00326737, 0.273064, -3.96825)
+shape = SubResource("BoxShape3D_j7xx1")
+
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_khffo")

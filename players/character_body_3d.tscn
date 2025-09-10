@@ -531,8 +531,10 @@ script = ExtResource("1_ual4q")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07454, -0.27942)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape3D_ual4q")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -588,6 +590,7 @@ transform = Transform3D(-0.999999, 1.04907e-06, -3.82139e-15, 0, -5.24537e-07, -
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="pistol"]
 transform = Transform3D(16.7775, -2.25374e-06, -1.10745e-05, -1.46673e-06, -10.9188, 2.24156e-19, -1.46673e-06, 1.97028e-13, -2.22206, -2.38419e-07, -0.558863, 0.500528)
+visible = false
 light_energy = 10.0
 spot_range = 70.0
 spot_angle = 50.0
@@ -597,6 +600,7 @@ wait_time = 0.35
 
 [node name="hitbox" type="Area3D" parent="."]
 transform = Transform3D(1.22526, 0, 0, 0, 1.12866, 0, 0, 0, 1.23499, 0, 0, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox"]
 shape = SubResource("CapsuleShape3D_168h7")
@@ -781,6 +785,7 @@ wait_time = 0.2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.555767, 0, 0, 0, 0.252031, 0, 0, 0, 0.862413, 0.18129, 0.452625, -0.664707)
+visible = false
 shape = SubResource("CapsuleShape3D_ual4q")
 
 [node name="Menu" type="CanvasModulate" parent="."]
