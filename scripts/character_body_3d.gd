@@ -34,8 +34,10 @@ func _ready() -> void:
 	$"Menu/Video settings".visible = false
 	FPS_Timer.start()
 func _process(delta):
-	FPS += 1
+	#FPS += 1
+	FPS = Engine.get_frames_per_second()
 func _physics_process(delta: float) -> void:
+	$HUD/FPS.text = str(FPS)
 	$HUD/Health.text = str(health)
 	if Input.is_action_pressed("Reload"):
 		bullets = 0
@@ -145,7 +147,7 @@ func _on_ps_timer_timeout():
 func _on_fps_t_timeout():
 	$HUD/FPS.text = str(FPS)
 	FPS = 0
-	FPS_Timer.start()
+	#FPS_Timer.start()
 
 func _on_area_3d_body_entered(body) :
 	if body is ebullet and imunity == false and GlobalVariables.menu == false:
@@ -211,9 +213,9 @@ func _on_fullscreen_pressed():
 func _on_vysinc_pressed():
 	if vsync == true:
 		vsync = false
-		DisplayServer.VSYNC_DISABLED
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		$"Menu/Video settings/vysinc".text = "Vsync/OFF"
 	else:
 		vsync = true
-		DisplayServer.VSYNC_ENABLED
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 		$"Menu/Video settings/vysinc".text = "Vsync/ON"

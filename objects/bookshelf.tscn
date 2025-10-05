@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjbvnifrwxcxe"]
+[gd_scene load_steps=10 format=3 uid="uid://cjbvnifrwxcxe"]
+
+[ext_resource type="Script" uid="uid://bh28xn5pioiah" path="res://objects/bookshelf.gd" id="1_4v7qk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j57hx"]
 albedo_color = Color(0.441287, 0.42469, 0.307071, 1)
@@ -20,7 +22,10 @@ material = SubResource("StandardMaterial3D_il0jf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f7jnn"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j57hx"]
+
 [node name="bookshelf" type="StaticBody3D"]
+script = ExtResource("1_4v7qk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.149743, 0, 0, 0, 3.03014, 0, 0, 0, 6.36216, 0, 0, 0)
@@ -225,3 +230,13 @@ mesh = SubResource("BoxMesh_kjdla")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3.17586, 0, 0, 0, 6.61301, 0, 0, 0)
 shape = SubResource("BoxShape3D_f7jnn")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.32128, 0, 0, 0, 1, 0, 0, 0, 1.40507, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(40.2845, 0, 0, 0, 1.87942, 0, 0, 0, 38.7238, 0, 0, 0)
+shape = SubResource("CylinderShape3D_j57hx")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,9 +1,9 @@
-extends Node3D
+extends StaticBody3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$".".visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -11,7 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_end_area_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is player:
-		get_tree().change_scene_to_file("res://level/end_scene.tscn")
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$".".visible = true
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body is player:
+		$".".visible = false

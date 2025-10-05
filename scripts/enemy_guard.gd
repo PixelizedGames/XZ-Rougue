@@ -18,6 +18,7 @@ const JUMP_VELOCITY = 4.5
 @onready var animation = $enemy_godot/AnimationPlayer
 
 func _ready() -> void:
+	$pistol/SpotLight3D.visible = false
 	SPEED = 1
 	animation.play("walking")
 	audio.start()
@@ -115,3 +116,13 @@ func _on_enemy_hitbox_body_entered(body: Node3D) -> void:
 		look_at(player.global_transform.origin, Vector3.UP)
 		timer.start()
 		health -= 3
+
+
+func _on_light_area_body_entered(body: Node3D) -> void:
+	if body is player:
+		$pistol/SpotLight3D.visible = true
+
+
+func _on_light_area_body_exited(body: Node3D) -> void:
+	if body is player:
+		$pistol/SpotLight3D.visible = false
